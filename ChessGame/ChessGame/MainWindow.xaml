@@ -28,7 +28,7 @@
             </Grid.RowDefinitions>
             
             <!-- Add in the square labels-->
-            <TextBlock Text="8" Grid.Column="0" Grid.Row="0" FontSize="24" HorizontalAlignment="Center" />
+            <TextBlock Text="8" Grid.Column="0" Grid.Row="0" FontSize="24" HorizontalAlignment="Center"/>
             <TextBlock Text="7" Grid.Column="0" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" />
             <TextBlock Text="6" Grid.Column="0" Grid.Row="2" FontSize="24" HorizontalAlignment="Center" />
             <TextBlock Text="5" Grid.Column="0" Grid.Row="3" FontSize="24" HorizontalAlignment="Center" />
@@ -48,81 +48,209 @@
             
             <!-- add images to the below borders-->
             <!-- row 0-->
-            <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="2" Grid.Row="0" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="3" Grid.Row="0" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="4" Grid.Row="0" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="5" Grid.Row="0" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="6" Grid.Row="0" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="7" Grid.Row="0" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="8" Grid.Row="0" BorderBrush="Black" BorderThickness="2"/>
+            <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="a8" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="0" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="b8" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="c8" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="0" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="d8" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="e8" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="0" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="f8" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="7" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="g8" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="8" Grid.Row="0" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="h8" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
 
-            
+
             <!-- row 1-->
-            <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="3" Grid.Row="1" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="4" Grid.Row="1" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="5" Grid.Row="1" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="6" Grid.Row="1" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="7" Grid.Row="1" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="8" Grid.Row="1" BorderBrush="Black" BorderThickness="2"/>
-            
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="a7" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="b7" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="c7" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="d7" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="e7" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="f7" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="7" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="g7" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="8" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="h7" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+
             <!-- row 2 -->
-            <Border Grid.Column="1" Grid.Row="2" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="2" Grid.Row="2" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="3" Grid.Row="2" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="4" Grid.Row="2" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="5" Grid.Row="2" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="6" Grid.Row="2" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="7" Grid.Row="2" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="8" Grid.Row="2" BorderBrush="Black" BorderThickness="2"/>
+            <Border Grid.Column="1" Grid.Row="2" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="a6" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="2" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="b6" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="2" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="c6" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="2" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="d6" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="2" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="e6" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="2" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="f6" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="7" Grid.Row="2" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="g6" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="8" Grid.Row="2" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="h6" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
 
             <!-- row 3 -->
-            <Border Grid.Column="1" Grid.Row="3" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="2" Grid.Row="3" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="3" Grid.Row="3" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="4" Grid.Row="3" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="5" Grid.Row="3" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="6" Grid.Row="3" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="7" Grid.Row="3" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="8" Grid.Row="3" BorderBrush="Black" BorderThickness="2"/>
+            <Border Grid.Column="1" Grid.Row="3" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="a5" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="3" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="b5" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="3" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="c5" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="3" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="d5" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="3" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="e5" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="3" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="f5" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="7" Grid.Row="3" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="g5" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="8" Grid.Row="3" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="h5" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
 
-            <Border Grid.Column="1" Grid.Row="4" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="2" Grid.Row="4" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="3" Grid.Row="4" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="4" Grid.Row="4" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="5" Grid.Row="4" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="6" Grid.Row="4" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="7" Grid.Row="4" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="8" Grid.Row="4" BorderBrush="Black" BorderThickness="2"/>
+            <Border Grid.Column="1" Grid.Row="4" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="a4" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="4" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="b4" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="4" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="c4" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="4" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="d4" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="4" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="e4" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="4" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="f4" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="7" Grid.Row="4" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="g4" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="8" Grid.Row="4" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="h4" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
 
-            <Border Grid.Column="1" Grid.Row="5" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="2" Grid.Row="5" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="3" Grid.Row="5" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="4" Grid.Row="5" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="5" Grid.Row="5" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="6" Grid.Row="5" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="7" Grid.Row="5" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="8" Grid.Row="5" BorderBrush="Black" BorderThickness="2"/>
+            <Border Grid.Column="1" Grid.Row="5" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="a3" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="b3" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="5" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="c3" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="d3" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="5" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="e3" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="f3" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="7" Grid.Row="5" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="g3" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="8" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="h3" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
 
-            <Border Grid.Column="1" Grid.Row="6" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="2" Grid.Row="6" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="3" Grid.Row="6" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="4" Grid.Row="6" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="5" Grid.Row="6" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="6" Grid.Row="6" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="7" Grid.Row="6" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="8" Grid.Row="6" BorderBrush="Black" BorderThickness="2"/>
+            <Border Grid.Column="1" Grid.Row="6" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="a2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="6" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="b2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="6" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="c2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="6" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="d2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="6" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="e2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="6" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="f2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="7" Grid.Row="6" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="g2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="8" Grid.Row="6" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="h2" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
 
-            <Border Grid.Column="1" Grid.Row="7" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="2" Grid.Row="7" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="3" Grid.Row="7" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="4" Grid.Row="7" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="5" Grid.Row="7" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="6" Grid.Row="7" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="7" Grid.Row="7" BorderBrush="Black" BorderThickness="2"/>
-            <Border Grid.Column="8" Grid.Row="7" BorderBrush="Black" BorderThickness="2"/>
+            <Border Grid.Column="1" Grid.Row="7" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="a1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="7" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="b1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="7" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="c1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="7" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="d1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="7" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="e1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="7" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="f1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="7" Grid.Row="7" BorderBrush="Black" BorderThickness="2" Background="Thistle">
+                <TextBlock x:Name="g1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="8" Grid.Row="7" BorderBrush="Black" BorderThickness="2">
+                <TextBlock x:Name="h1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
 
         </Grid>
         <Grid Width="75">
