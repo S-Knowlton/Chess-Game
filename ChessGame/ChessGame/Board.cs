@@ -9,7 +9,7 @@ namespace ChessGame
 {
     class Board
     {
-        Piece[,] board;
+        public Piece[,] board;
 
         Board(Player p1, Player p2){
             board = new Piece[8,8];
@@ -41,7 +41,24 @@ namespace ChessGame
             board[0, 5] = new Bishop(p2);
             board[0, 6] = new Knight(p2);
             board[0, 7] = new Rook(p2);
+        }
 
+        Board(Board b)
+        {
+            board = new Piece[8, 8];
+
+            for(int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    board[7 - i,j] = b.GetPieceAt(new Point(i, j));
+                }
+            }
+        }
+
+        Piece GetPieceAt(Point P)
+        {
+            return null;
         }
 
         int GetPlayerAt(Point p){
