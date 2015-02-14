@@ -9,9 +9,11 @@ namespace ChessGame
 {
     class Board
     {
-        public Piece[,] board;
+        Piece[,] board;
+        List<Board> observers;
 
-        Board(Player p1, Player p2){
+        public Board(Player p1, Player p2){
+            observers = new List<Board>();
             board = new Piece[8,8];
 
             //player 1 (white)
@@ -36,22 +38,26 @@ namespace ChessGame
             board[0, 0] = new Rook(p2);
             board[0, 1] = new Knight(p2);
             board[0, 2] = new Bishop(p2);
-            board[0, 3] = new Queen(p2);
-            board[0, 4] = new King(p2);
+            board[0, 3] = new King(p2);
+            board[0, 4] = new Queen(p2);
             board[0, 5] = new Bishop(p2);
             board[0, 6] = new Knight(p2);
             board[0, 7] = new Rook(p2);
         }
 
-        Board(Board b)
+        public Board(Board b)
         {
+            observers = new List<Board>();
+            observers.Add(b);
+            b.observers.Add(this);
+
             board = new Piece[8, 8];
 
-            for(int i = 0; i < 8; i++)
+            for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    board[7 - i,j] = b.GetPieceAt(new Point(i, j));
+                    board[7 - i, j] = b.GetPieceAt(new Point(i, j));
                 }
             }
         }
@@ -68,6 +74,17 @@ namespace ChessGame
         static string PointToBoardName(Point p)
         {
             return "not yet implemented";
+        }
+
+        public void PrintBoard(){
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    System.Console.Write(board[i, j] + " ");
+                }
+                System.Console.WriteLine("");
+            }
         }
     }
 }

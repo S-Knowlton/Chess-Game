@@ -20,5 +20,7 @@ namespace ChessGame
         }
 
         public abstract List<Move> getPossibleMoves(Board board);
+
+        public override abstract string ToString();
     }
 }

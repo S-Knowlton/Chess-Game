@@ -9,5 +9,11 @@ namespace ChessGame
     class Player
     {
         int id;
+
+        public Player(int num)
+        {
+            id = num;
+        }
+
     }
 }
