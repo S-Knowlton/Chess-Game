@@ -19,6 +19,6 @@ namespace ChessGame
             player = p;
         }
 
-        public abstract List<Move> getPossibleMoves();
+        public abstract List<Move> getPossibleMoves(Board board);
     }
 }

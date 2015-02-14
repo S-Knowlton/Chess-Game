@@ -13,7 +13,7 @@ namespace ChessGame
            
         }
 
-        public override List<Move> getPossibleMoves()
+        public override List<Move> getPossibleMoves(Board b)
         {
             throw new NotImplementedException();
         }
