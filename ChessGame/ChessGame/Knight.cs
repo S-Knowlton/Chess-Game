@@ -17,5 +17,11 @@ namespace ChessGame
         {
             throw new NotImplementedException();
         }
+
+        public override string ToString()
+        {
+            return "K";
+        }
+
     }
 }
