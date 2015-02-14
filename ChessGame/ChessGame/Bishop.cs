@@ -8,7 +8,7 @@ namespace ChessGame
 {
     class Bishop : Piece
     {
-        Bishop(Player p):base(p)
+        public Bishop(Player p):base(p)
         {
 
         }

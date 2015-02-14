@@ -8,6 +8,8 @@ namespace ChessGame
 {
     class Rook : Piece
     {
+        private Player p1;
+
         public Rook(Player p):base(p)
         {
           
