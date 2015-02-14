@@ -9,6 +9,13 @@ namespace ChessGame
 {
     class Board
     {
+        Piece[][] board;
+
+        Board(){
+            board = new Piece[8][8];
+            board[0][0] = new Pawn();
+        }
+
         int getPlayerAt(Point){
 
         }
