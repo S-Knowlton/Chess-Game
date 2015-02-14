@@ -10,10 +10,9 @@ namespace ChessGame
     class Board
     {
         Piece[,] board;
-        List<Board> observers;
+        Board observer;
 
         public Board(Player p1, Player p2){
-            observers = new List<Board>();
             board = new Piece[8,8];
 
             //player 1 (white)
@@ -45,11 +44,15 @@ namespace ChessGame
             board[0, 7] = new Rook(p2);
         }
 
+        void changed()
+        {
+
+        }
+
         public Board(Board b)
         {
-            observers = new List<Board>();
-            observers.Add(b);
-            b.observers.Add(this);
+            observer = b;
+            b.observer = this;
 
             board = new Piece[8, 8];
 
@@ -57,14 +60,14 @@ namespace ChessGame
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    board[7 - i, j] = b.GetPieceAt(new Point(i, j));
+                    board[7 - i, 7- j] = b.GetPieceAt(new Point(i, j));
                 }
             }
         }
 
-        Piece GetPieceAt(Point P)
+        public Piece GetPieceAt(Point p)
         {
-            return null;
+            return board[p.X, p.Y];
         }
 
         int GetPlayerAt(Point p){

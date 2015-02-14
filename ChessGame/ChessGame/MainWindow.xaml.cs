@@ -28,8 +28,13 @@ namespace ChessGame
             Player p1 = new Player(1);
             Player p2 = new Player(2);
 
-            Board b1 = new Board(p1, p2);
-            b1.PrintBoard();
+            Board board1 = new Board(p1, p2);
+            board1.PrintBoard();
+
+            System.Console.WriteLine("\n\n");
+
+            Board board2 = new Board(board1);
+            board2.PrintBoard();
 
             //start game logic here
 
