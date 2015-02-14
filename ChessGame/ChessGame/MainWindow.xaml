@@ -2,7 +2,46 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel Orientation="Horizontal">
+        <Grid Width="450">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Add in the square labels-->
+            <TextBlock Text="8" Grid.Column="0" Grid.Row="0" FontSize="24" HorizontalAlignment="Center" />
+            <TextBlock Text="7" Grid.Column="0" Grid.Row="1" FontSize="24" HorizontalAlignment="Center" />
+            <TextBlock Text="6" Grid.Column="0" Grid.Row="2" FontSize="24" HorizontalAlignment="Center" />
+            <TextBlock Text="5" Grid.Column="0" Grid.Row="3" FontSize="24" HorizontalAlignment="Center" />
+            <TextBlock Text="4" Grid.Column="0" Grid.Row="4" FontSize="24" HorizontalAlignment="Center" />
+            <TextBlock Text="3" Grid.Column="0" Grid.Row="5" FontSize="24" HorizontalAlignment="Center" />
+            <TextBlock Text="2" Grid.Column="0" Grid.Row="6" FontSize="24" HorizontalAlignment="Center" />
+            <TextBlock Text="1" Grid.Column="0" Grid.Row="7" FontSize="24" HorizontalAlignment="Center" />
+            
+            <TextBlock T
+        </Grid>
+        <StackPanel Width="75">
+            <TextBlock/>
+            <TextBox/>
+        </StackPanel>
+    </StackPanel>
 </Window>
