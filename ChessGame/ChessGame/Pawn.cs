@@ -20,7 +20,7 @@ namespace ChessGame
 
         public override string ToString()
         {
-            return "P";
+            return "P" + player.GetID();
         }
     }
 }

@@ -15,5 +15,10 @@ namespace ChessGame
             id = num;
         }
 
+        public int GetID()
+        {
+            return id;
+        }
+
     }
 }

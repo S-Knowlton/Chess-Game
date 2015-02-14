@@ -25,8 +25,8 @@ namespace ChessGame
         {
             InitializeComponent();
 
-            Player p1 = new Player();
-            Player p2 = new Player();
+            Player p1 = new Player(1);
+            Player p2 = new Player(2);
 
             Board b1 = new Board(p1, p2);
             b1.PrintBoard();

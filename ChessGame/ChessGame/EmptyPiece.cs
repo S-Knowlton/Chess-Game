@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class King : Piece
+    class EmptyPiece : Piece
     {
-        public King(Player p): base(p)
-        {
 
+        public EmptyPiece():base(new Player(0))
+        {
+            
         }
 
-        public override List<Move> getPossibleMoves(Board b)
+        public override List<Move> getPossibleMoves(Board board)
         {
-            throw new NotImplementedException();
+            return new List<Move>();
         }
 
         public override string ToString()
         {
-            return "+" + player.GetID();
+            return "  ";
         }
     }
 }
