@@ -10,7 +10,9 @@ namespace ChessGame
     abstract class Piece
     {
        Point position;
+       Player player;
 
         //abstract methods here
+       public abstract List<Move> getPossibleMoves();
     }
 }
