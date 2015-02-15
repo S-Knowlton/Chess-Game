@@ -128,6 +128,11 @@ namespace ChessGame
 
         private void a8_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
+
+            foreach (Border border in borders) {
+                border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
+            }
             TextBlock s = (TextBlock) sender;
             Viewbox v = (System.Windows.Controls.Viewbox) s.Parent;
             Border b = (Border)v.Parent;
@@ -135,6 +140,8 @@ namespace ChessGame
 
             // will have to subtract 1 from column
             int col = Grid.GetColumn(b) - 1;
+            Debug.WriteLine("row is " + row);
+            Debug.WriteLine("col is " + col);
 
             // get piece from board at this position
             Piece p = board1.GetPieceAt(new System.Drawing.Point(row, col));
@@ -147,19 +154,17 @@ namespace ChessGame
 
                 Thing.Text = "clicked";
                 List<System.Drawing.Point> endSpaces = p.getPossibleEndSpaces(board2);
-                Debug.WriteLine(endSpaces.Count);
-
-                for (int i = 0; i < endSpaces.Count; i++)
+                if (endSpaces != null)
                 {
-                    TextBlock current = blocks[endSpaces[i].X][endSpaces[i].Y];
-                    Viewbox currentViewbox = (Viewbox)current.Parent;
-                    Border currentBorder = (Border)current.Parent;
-                    SolidColorBrush tempBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 0, 0));
-                    currentBorder.BorderBrush = tempBrush;
+                    for (int i = 0; i < endSpaces.Count; i++)
+                    {
+                        TextBlock current = blocks[7 - endSpaces[i].X][7 - endSpaces[i].Y];
+                        Viewbox currentViewbox = (Viewbox)current.Parent;
+                        Border currentBorder = (Border)currentViewbox.Parent;
+                        SolidColorBrush tempBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 0, 0));
+                        currentBorder.BorderBrush = tempBrush;
+                    }
                 }
-                /*foreach (System.Drawing.Point endSpace in endSpaces) {
-
-                } */
             }
 
             if (p.player.GetID() == 1)
@@ -167,19 +172,18 @@ namespace ChessGame
 
                 Thing.Text = "clicked";
                 List<System.Drawing.Point> endSpaces = p.getPossibleEndSpaces(board1);
-                Debug.WriteLine(endSpaces.Count);
 
-                for (int i = 0; i < endSpaces.Count; i++)
+                if (endSpaces != null)
                 {
-                    TextBlock current = blocks[endSpaces[i].X][endSpaces[i].Y];
-                    Viewbox currentViewbox = (Viewbox)current.Parent;
-                    Border currentBorder = (Border)current.Parent;
-                    SolidColorBrush tempBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 0, 0));
-                    currentBorder.BorderBrush = tempBrush;
+                    for (int i = 0; i < endSpaces.Count; i++)
+                    {
+                        TextBlock current = blocks[endSpaces[i].X][endSpaces[i].Y];
+                        Viewbox currentViewbox = (Viewbox)current.Parent;
+                        Border currentBorder = (Border)currentViewbox.Parent;
+                        SolidColorBrush tempBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 0, 0));
+                        currentBorder.BorderBrush = tempBrush;
+                    }
                 }
-                /*foreach (System.Drawing.Point endSpace in endSpaces) {
-
-                } */
             }
 
 
