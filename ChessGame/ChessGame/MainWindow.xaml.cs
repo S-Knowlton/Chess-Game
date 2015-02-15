@@ -26,6 +26,8 @@ namespace ChessGame
         List<List<TextBlock>> blocks;
         Dictionary<Type, string> blackPieces;
         Dictionary<Type, string> whitePieces;
+        Board board1;
+        Board board2;
 
         public MainWindow()
         {
@@ -37,7 +39,8 @@ namespace ChessGame
             Player p1 = new Player(1);
             Player p2 = new Player(2);
 
-            Board board1 = new Board(p1, p2);
+            board1 = new Board(p1, p2);
+            board2 = new Board(p2, p1);
             UpdateBoard(board1);
         }
 
@@ -134,7 +137,51 @@ namespace ChessGame
             int col = Grid.GetColumn(b) - 1;
 
             // get piece from board at this position
-            Piece p;
+            Piece p = board1.GetPieceAt(new System.Drawing.Point(row, col));
+
+            Debug.WriteLine(p);
+
+            // this is the default view
+            if (p.player.GetID() == 2)
+            {
+
+                Thing.Text = "clicked";
+                List<System.Drawing.Point> endSpaces = p.getPossibleEndSpaces(board2);
+                Debug.WriteLine(endSpaces.Count);
+
+                for (int i = 0; i < endSpaces.Count; i++)
+                {
+                    TextBlock current = blocks[endSpaces[i].X][endSpaces[i].Y];
+                    Viewbox currentViewbox = (Viewbox)current.Parent;
+                    Border currentBorder = (Border)current.Parent;
+                    SolidColorBrush tempBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 0, 0));
+                    currentBorder.BorderBrush = tempBrush;
+                }
+                /*foreach (System.Drawing.Point endSpace in endSpaces) {
+
+                } */
+            }
+
+            if (p.player.GetID() == 1)
+            {
+
+                Thing.Text = "clicked";
+                List<System.Drawing.Point> endSpaces = p.getPossibleEndSpaces(board1);
+                Debug.WriteLine(endSpaces.Count);
+
+                for (int i = 0; i < endSpaces.Count; i++)
+                {
+                    TextBlock current = blocks[endSpaces[i].X][endSpaces[i].Y];
+                    Viewbox currentViewbox = (Viewbox)current.Parent;
+                    Border currentBorder = (Border)current.Parent;
+                    SolidColorBrush tempBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 0, 0));
+                    currentBorder.BorderBrush = tempBrush;
+                }
+                /*foreach (System.Drawing.Point endSpace in endSpaces) {
+
+                } */
+            }
+
 
             // add checks for correct player
         }
