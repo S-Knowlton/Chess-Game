@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace ChessGame
 {
@@ -121,5 +122,27 @@ namespace ChessGame
                 }
             }
         }
+
+        private void a8_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock s = (TextBlock)sender;
+            Viewbox v = (System.Windows.Controls.Viewbox)s.Parent;
+            Border b = (Border)v.Parent;
+            int row = Grid.GetRow(b);
+
+            // will have to subtract 1 from column
+            int col = Grid.GetColumn(b) - 1;
+
+            // get piece from board at this position
+            Piece p;
+
+            // add checks for correct player
+        }
+
+        private void Viewbox_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
     }
 }
