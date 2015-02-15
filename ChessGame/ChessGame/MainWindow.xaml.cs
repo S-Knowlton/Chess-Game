@@ -42,7 +42,7 @@ namespace ChessGame
 
         }
 
-        void setup()
+        public void setup()
         {
                 Player p1 = new Player(1);
                 Player p2 = new Player(2);
@@ -280,26 +280,16 @@ namespace ChessGame
 
         private void AIStep()
         {
-            List<Piece> pieces = board2.getBlackPieces();
-            List<Move> moves = new List<Move>();
+            KyleAI ai = new KyleAI(this);
 
-
-            for (int i = 0; i < pieces.Count; i++)
+            Move aiMove = ai.getMove(board2);
+            if (null != aiMove)
             {
-                List<System.Drawing.Point> endPoints = pieces[i].getPossibleEndSpaces(board2);
-                for (int j = 0; j < endPoints.Count; j++)
-                {
-                    moves.Add(new Move(pieces[i].GetPosition(), endPoints[j])); 
-                }
+                board2.MakeMove(aiMove);
             }
-
-            if (pieces.Count == 0)
+            else
             {
                 setup();
-            } else
-            {
-            Random rand = new Random();
-            board2.MakeMove(moves[rand.Next(moves.Count())]);
             }
         }
 

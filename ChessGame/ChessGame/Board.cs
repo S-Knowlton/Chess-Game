@@ -168,26 +168,6 @@ namespace ChessGame
             changed();            
         }
 
-        public List<Piece> getBlackPieces()
-        {
-
-            List<Piece> pieces = new List<Piece>();
-
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    Point tempPoint = new Point(i,j);
-                    if (GetPieceAt(tempPoint).player.GetID() == 2)
-                    {
-                        pieces.Add(GetPieceAt(tempPoint));
-                    }
-                }
-            }
-
-            return pieces;
-        }
-
         public void PrintBoard(){
             for (int i = 0; i < 8; i++)
             {
