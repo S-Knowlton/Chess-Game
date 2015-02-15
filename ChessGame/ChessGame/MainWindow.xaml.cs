@@ -25,8 +25,6 @@ namespace ChessGame
         List<List<TextBlock>> blocks;
         Dictionary<Type, string> blackPieces;
         Dictionary<Type, string> whitePieces;
-        Board board1;
-        Board board2;
 
         public MainWindow()
         {
@@ -34,12 +32,11 @@ namespace ChessGame
             InitializeComponent();
             InitLists();
 
+
             Player p1 = new Player(1);
             Player p2 = new Player(2);
 
-            board1 = new Board(p1, p2);
-            board2 = new Board(board1);
-
+            Board board1 = new Board(p1, p2);
             UpdateBoard(board1);
         }
 
