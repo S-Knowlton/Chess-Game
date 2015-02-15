@@ -125,8 +125,8 @@ namespace ChessGame
 
         private void a8_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            TextBlock s = (TextBlock)sender;
-            Viewbox v = (System.Windows.Controls.Viewbox)s.Parent;
+            TextBlock s = (TextBlock) sender;
+            Viewbox v = (System.Windows.Controls.Viewbox) s.Parent;
             Border b = (Border)v.Parent;
             int row = Grid.GetRow(b);
 
