@@ -196,12 +196,16 @@ namespace ChessGame
                     piecePosition = new System.Drawing.Point(7 - p.position.X, 7 - p.position.Y);
                 }
 
-                if (endSpaces != null && endSpaces.Contains(p.position)) {
+                if (endSpaces != null && endSpaces.Contains(piecePosition)) {
                     // this move is allowed!
+
                     Move m = new Move();
 
+                    Debug.WriteLine(board1.GetPieceAt(p.position));
+
                     m.Start = previousPiece.position;
-                    m.End = p.position;
+                    m.End = piecePosition;
+
                     board1.MakeMove(m);
                     previousPiece = null;
 
