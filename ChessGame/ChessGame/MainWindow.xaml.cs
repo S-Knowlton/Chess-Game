@@ -199,6 +199,14 @@ namespace ChessGame
                     board1.MakeMove(m);
                     previousPiece = null;
                     UpdateBoard(board1);
+
+
+                    IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
+
+                    foreach (Border border in borders)
+                    {
+                        border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
+                    }
                 }
                 else
                 {
@@ -211,12 +219,20 @@ namespace ChessGame
                 {
                     Move m = new Move();
                     m.Start = previousPiece.position;
-                    m.End = p.position;
+                    m.End = new System.Drawing.Point(7 - p.position.X, 7 - p.position.Y);
                     previousPiece = null;
                     board2.MakeMove(m);
 
                     // THIS NEEDS TO BE A DIFFERENT BOARD
                     UpdateBoard(board2);
+
+
+                    IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
+
+                    foreach (Border border in borders)
+                    {
+                        border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
+                    }
                 }
                 else
                 {
