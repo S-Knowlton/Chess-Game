@@ -30,7 +30,35 @@ namespace ChessGame
             else
             {
                 Random rand = new Random();
-                return moves[rand.Next(moves.Count())];
+
+                //select a move to take a piece (if able)
+                bool canTake = false;
+
+                List<Move> takeMoves = new List<Move>(0);
+
+                List<Piece> oppPieces = GetWhitePieces(b);
+                for (int i = 0; i < moves.Count; i++)
+                {
+                    for (int j = 0; j < oppPieces.Count; j++)
+                    {
+                        if (moves[i].End == b.GetPiecePosition(oppPieces[j]))
+                        {
+                            //then I can take it
+                            System.Console.WriteLine("I can take a piece");
+                            canTake = true;
+                            takeMoves.Add(moves[i]);
+                        }
+                    }
+                }
+
+                if (canTake)
+                {
+                    return takeMoves[rand.Next(takeMoves.Count())];
+                }
+                else
+                {
+                    return moves[rand.Next(moves.Count())];
+                }
             }
         }
 
