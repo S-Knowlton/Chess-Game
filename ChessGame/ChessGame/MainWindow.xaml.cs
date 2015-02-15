@@ -190,6 +190,12 @@ namespace ChessGame
             if (previousPiece.player.GetID() == 1)
             {
                 List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board1);
+                System.Drawing.Point piecePosition = p.position;
+                if (p.player.GetID() == 2)
+                {
+                    piecePosition = new System.Drawing.Point(7 - p.position.X, 7 - p.position.Y);
+                }
+
                 if (endSpaces != null && endSpaces.Contains(p.position)) {
                     // this move is allowed!
                     Move m = new Move();
@@ -215,6 +221,11 @@ namespace ChessGame
             }
             else if (previousPiece.player.GetID() == 2) {
                 List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board2);
+                System.Drawing.Point piecePosition = p.position;
+                if (p.player.GetID() == 1)
+                {
+                    piecePosition = new System.Drawing.Point(7 - p.position.X, 7 - p.position.Y);
+                }
                 if (endSpaces != null && endSpaces.Contains(p.position))
                 {
                     Move m = new Move();
