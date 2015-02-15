@@ -143,13 +143,13 @@ namespace ChessGame
             board[start.X, start.Y] = new EmptyPiece();
             board[end.X, end.Y] = firstPiece;
 
-            if ((string)App.Current.Properties["ActivePlayer"] == "p1")
+            if ((string)App.Current.Properties["ActivePlayer"] == "White")
             {
-                App.Current.Properties["ActivePlayer"] = "p2";
+                App.Current.Properties["ActivePlayer"] = "Black";
             }
             else
             {
-                App.Current.Properties["ActivePlayer"] = "p1";
+                App.Current.Properties["ActivePlayer"] = "White";
             }
             
         }

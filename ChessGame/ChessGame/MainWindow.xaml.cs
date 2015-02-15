@@ -39,7 +39,7 @@ namespace ChessGame
 
             Player p1 = new Player(1);
             Player p2 = new Player(2);
-            App.Current.Properties["ActivePlayer"] = "p1";
+            App.Current.Properties["ActivePlayer"] = "White";
 
             board1 = new Board(p1, p2);
             board2 = new Board(board1);
