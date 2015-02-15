@@ -10,6 +10,12 @@ namespace ChessGame
     public class Move
     {
 
+        public Move(Point s, Point e)
+        {
+            Start = s;
+            End = e;
+        }
+
         public Point Start
         {
             get;

@@ -36,17 +36,22 @@ namespace ChessGame
             InitializeComponent();
             InitLists();
 
-
-            Player p1 = new Player(1);
-            Player p2 = new Player(2);
-            App.Current.Properties["ActivePlayer"] = "White";
-
-            board1 = new Board(p1, p2);
-            board2 = new Board(board1);
-            previousPiece = null;
-            UpdateBoard(board1);
+            TwoPlayer.IsChecked = true;
+            setup();
 
 
+        }
+
+        void setup()
+        {
+                Player p1 = new Player(1);
+                Player p2 = new Player(2);
+                App.Current.Properties["ActivePlayer"] = "White";
+
+                board1 = new Board(p1, p2);
+                board2 = new Board(board1);
+                previousPiece = null;
+                UpdateBoard(board1);
         }
 
         void InitLists()
@@ -205,27 +210,36 @@ namespace ChessGame
                     piecePosition = new System.Drawing.Point(7 - p.position.X, 7 - p.position.Y);
                 }
 
-                if (endSpaces != null && endSpaces.Contains(piecePosition)) {
+                if (endSpaces != null && endSpaces.Contains(piecePosition))
+                {
                     // this move is allowed!
 
-                    Move m = new Move();
+                    Move m = new Move(previousPiece.position, piecePosition);
 
                     Debug.WriteLine(board1.GetPieceAt(p.position));
 
-                    m.Start = previousPiece.position;
-                    m.End = piecePosition;
-
                     board1.MakeMove(m);
 
-
                     clearBorders();
+                    UpdateBoard(board1);
+
+                    previousPiece = null;
+
+                    //AI's turn
+                    if (AI.IsChecked == true)
+                    {
+                        //wait 1 second TBI
+                        AIStep();
+                        UpdateBoard(board1);
+                    }
                 }
                 else
                 {
                     HighlightSpots(p);
                 }
             }
-            else if (previousPiece.player.GetID() == 2) {
+            else if (previousPiece.player.GetID() == 2)
+            {
 
                 //if not the right player
                 if ((string)App.Current.Properties["ActivePlayer"] == "White")
@@ -243,11 +257,9 @@ namespace ChessGame
                 }
                 if (endSpaces != null && endSpaces.Contains(piecePosition))
                 {
-                    Move m = new Move();
-                    m.Start = previousPiece.position;
-                    m.End = piecePosition;
-                    board2.MakeMove(m);
+                    Move m = new Move(previousPiece.position, piecePosition);
 
+                    board2.MakeMove(m);
 
                     clearBorders();
                 }
@@ -263,6 +275,32 @@ namespace ChessGame
 
             UpdateBoard(board1);
             previousPiece = null;
+
+        }
+
+        private void AIStep()
+        {
+            List<Piece> pieces = board2.getBlackPieces();
+            List<Move> moves = new List<Move>();
+
+
+            for (int i = 0; i < pieces.Count; i++)
+            {
+                List<System.Drawing.Point> endPoints = pieces[i].getPossibleEndSpaces(board2);
+                for (int j = 0; j < endPoints.Count; j++)
+                {
+                    moves.Add(new Move(pieces[i].GetPosition(), endPoints[j])); 
+                }
+            }
+
+            if (pieces.Count == 0)
+            {
+                setup();
+            } else
+            {
+            Random rand = new Random();
+            board2.MakeMove(moves[rand.Next(moves.Count())]);
+            }
         }
 
         private void clearBorders()
@@ -303,6 +341,11 @@ namespace ChessGame
             {
                 MovePiece(p);
             }
+        }
+
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            setup();
         }
 
     }

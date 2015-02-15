@@ -8,7 +8,7 @@
             <ColumnDefinition Width="16*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="10">
-            <Button Content="Refresh"/>
+            <Button Content="Refresh" Click="RefreshButton_Click"/>
             <RadioButton x:Name="AI" GroupName="AIOrPlayer">One Player</RadioButton>
             <RadioButton x:Name="TwoPlayer" GroupName="AIOrPlayer">Two Players</RadioButton>
         </StackPanel>
