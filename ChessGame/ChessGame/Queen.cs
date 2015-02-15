@@ -18,7 +18,186 @@ namespace ChessGame
 
         public override List<Point> getPossibleEndSpaces(Board b)
         {
-            return null;
+            List<Point> endSpaces = new List<Point>();
+
+            //downLeft
+            bool hitSomething = false;
+            Point currentPosition = new Point(position.X, position.Y);
+            while (b.pointExists(new Point(position.X + 1, position.Y - 1)) && hitSomething == false)
+            {
+                currentPosition.X += 1;
+                currentPosition.Y -= 1;
+
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            //downRight
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            while (b.pointExists(new Point(position.X + 1, position.Y + 1)) && hitSomething == false)
+            {
+                currentPosition.X += 1;
+                currentPosition.Y += 1;
+
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            //upLeft
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            while (b.pointExists(new Point(position.X - 1, position.Y - 1)) && hitSomething == false)
+            {
+                currentPosition.X -= 1;
+                currentPosition.Y -= 1;
+
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            //upRight
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            while (b.pointExists(new Point(position.X - 1, position.Y + 1)) && hitSomething == false)
+            {
+                currentPosition.X -= 1;
+                currentPosition.Y += 1;
+
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+
+            //up
+            while (b.pointExists(new Point(position.X - 1, position.Y)) && hitSomething == false)
+            {
+                currentPosition.X -= 1;
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            //right
+            while (b.pointExists(new Point(position.X, position.Y + 1)) && hitSomething == false)
+            {
+                currentPosition.Y += 1;
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            //down
+            while (b.pointExists(new Point(position.X + 1, position.Y)) && hitSomething == false)
+            {
+                currentPosition.X += 1;
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            //left
+            while (b.pointExists(new Point(position.X, position.Y - 1)) && hitSomething == false)
+            {
+                currentPosition.Y -= 1;
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            return endSpaces;
         }
 
         public override string ToString()
