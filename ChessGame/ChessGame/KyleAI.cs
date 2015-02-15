@@ -17,11 +17,10 @@ namespace ChessGame
             owner = o;
         }
 
-        public Move getMove(Board b){
+        public Move GetMove(Board b){
 
-            List<Piece> pieces = getBlackPieces(b);
+            List<Piece> pieces = GetBlackPieces(b);
             List<Move> moves = new List<Move>();
-
 
             for (int i = 0; i < pieces.Count; i++)
             {
@@ -43,7 +42,7 @@ namespace ChessGame
             }
         }
 
-        public List<Piece> getBlackPieces(Board b)
+        public List<Piece> GetBlackPieces(Board b)
         {
 
             List<Piece> pieces = new List<Piece>();
@@ -62,5 +61,17 @@ namespace ChessGame
 
             return pieces;
         }
+
+        Board OpponentBoard(Board b)
+        {
+            return new Board(b);
+        }
+
+        bool AmInCheck(Board b)
+        {
+            Board opp = OpponentBoard(b);
+            return false;
+        }
+        
     }
 }

@@ -291,7 +291,7 @@ namespace ChessGame
         {
             KyleAI ai = new KyleAI(this);
 
-            Move aiMove = ai.getMove(board2);
+            Move aiMove = ai.GetMove(board2);
             if (null != aiMove)
             {
                 board2.MakeMove(aiMove);
