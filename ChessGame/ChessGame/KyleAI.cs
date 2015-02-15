@@ -66,8 +66,10 @@ namespace ChessGame
             }
         }
 
+        
+
         //pieces must belong to the board passed ID1 = board1, ID2 = board2
-        public List<Move> getAllMoves(Board b, List<Piece> pieces)
+        List<Move> getAllMoves(Board b, List<Piece> pieces)
         {
             List<Move> moves = new List<Move>();
 
@@ -86,7 +88,7 @@ namespace ChessGame
         /*
          * Returns a list of black pieces on the specified board
          */ 
-        public List<Piece> GetBlackPieces(Board b)
+        List<Piece> GetBlackPieces(Board b)
         {
             List<Piece> pieces = new List<Piece>();
 
@@ -108,7 +110,7 @@ namespace ChessGame
         /*
          * returns a list of white pieces on the specified board
          */
-        public List<Piece> GetWhitePieces(Board b)
+        List<Piece> GetWhitePieces(Board b)
         {
             List<Piece> pieces = new List<Piece>();
 
