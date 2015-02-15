@@ -239,7 +239,7 @@ namespace ChessGame
 
             Debug.WriteLine(p);
 
-            if (previousPiece == null)
+            if (previousPiece == null || previousPiece is EmptyPiece)
             {
                 HighlightSpots(p);
                 previousPiece = p;
