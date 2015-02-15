@@ -175,8 +175,6 @@ namespace ChessGame
                 {
                     for (int i = 0; i < endSpaces.Count; i++)
                     {
-                        Debug.WriteLine("x: " + endSpaces[i].X);
-                        Debug.WriteLine("y: " + endSpaces[i].Y);
                         TextBlock current = blocks[7 - endSpaces[i].X][7 - endSpaces[i].Y];
                         Viewbox currentViewbox = (Viewbox)current.Parent;
                         Border currentBorder = (Border)currentViewbox.Parent;
@@ -244,8 +242,6 @@ namespace ChessGame
                     // this move is allowed!
 
                     Move m = new Move(previousPiece.position, piecePosition);
-
-                    Debug.WriteLine(board1.GetPieceAt(p.position));
 
                     board1.MakeMove(m);
 
@@ -345,7 +341,6 @@ namespace ChessGame
          */ 
         private void a8_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Debug.WriteLine("I was clicked!");
 
             TextBlock s = (TextBlock) sender;
             Viewbox v = (System.Windows.Controls.Viewbox) s.Parent;
@@ -354,13 +349,9 @@ namespace ChessGame
 
             // will have to subtract 1 from column
             int col = Grid.GetColumn(b) - 1;
-            Debug.WriteLine("row is " + row);
-            Debug.WriteLine("col is " + col);
 
             // get piece from board at this position
             Piece p = board1.GetPieceAt(new System.Drawing.Point(row, col));
-
-            Debug.WriteLine(p);
 
             if (previousPiece == null || previousPiece is EmptyPiece)
             {
