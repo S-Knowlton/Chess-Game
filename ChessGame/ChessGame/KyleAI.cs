@@ -116,40 +116,5 @@ namespace ChessGame
 
             return pieces;
         }
-
-        Board OpponentBoard(Board b)
-        {
-            return new Board(b);
-        }
-
-        List<Move> convertMovesToMyBoard(List<Move> l)
-        {
-            List<Move> fixedMoves = new List<Move>();
-            for (int i = 0; i < l.Count; i++)
-            {
-                fixedMoves.Add(new Move(new Point(7 - l[i].Start.X, 7 - l[i].Start.Y), new Point(7-l[i].End.X, 7-l[i].End.Y)));
-            }
-            return fixedMoves;
-        }
-
-        List<Piece> PiecesByType(Board b, Piece p)
-        {
-            List<Piece> foundPieces = new List<Piece>();
-
-            List<Piece> pieces = GetBlackPieces(b);
-            for (int i = 0; i < pieces.Count; i++)
-            {
-
-                //System.Console.WriteLine(pieces[i].ToString());
-
-                if (pieces[i].ToString() == p.ToString())
-                {
-                    foundPieces.Add(pieces[i]);
-                }
-            }
-
-            return foundPieces;
-        }
-        
     }
 }
