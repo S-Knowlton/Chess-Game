@@ -189,6 +189,15 @@ namespace ChessGame
             // check if piece can move to that place
             if (previousPiece.player.GetID() == 1)
             {
+
+                //if not the right player
+                if ((string)App.Current.Properties["ActivePlayer"] == "Black")
+                {
+                    previousPiece = null;
+                    clearBorders();
+                    return;
+                }
+
                 List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board1);
                 System.Drawing.Point piecePosition = p.position;
                 if (p.player.GetID() == 2)
@@ -209,12 +218,7 @@ namespace ChessGame
                     board1.MakeMove(m);
 
 
-                    IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
-
-                    foreach (Border border in borders)
-                    {
-                        border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
-                    }
+                    clearBorders();
                 }
                 else
                 {
@@ -222,6 +226,15 @@ namespace ChessGame
                 }
             }
             else if (previousPiece.player.GetID() == 2) {
+
+                //if not the right player
+                if ((string)App.Current.Properties["ActivePlayer"] == "White")
+                {
+                    previousPiece = null;
+                    clearBorders();
+                    return;
+                }
+
                 List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board2);
                 System.Drawing.Point piecePosition = p.position;
                 if (p.player.GetID() != 2)
@@ -236,12 +249,7 @@ namespace ChessGame
                     board2.MakeMove(m);
 
 
-                    IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
-
-                    foreach (Border border in borders)
-                    {
-                        border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
-                    }
+                    clearBorders();
                 }
                 else
                 {
@@ -255,6 +263,16 @@ namespace ChessGame
 
             UpdateBoard(board1);
             previousPiece = null;
+        }
+
+        private void clearBorders()
+        {
+            IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
+
+            foreach (Border border in borders)
+            {
+                border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
+            }
         }
 
         private void a8_MouseDown(object sender, MouseButtonEventArgs e)

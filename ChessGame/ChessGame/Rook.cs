@@ -24,7 +24,8 @@ namespace ChessGame
             Point currentPosition = new Point(position.X, position.Y);
 
             //up
-            while(b.pointExists(new Point(position.X - 1, position.Y)) && hitSomething == false){
+            while (b.pointExists(new Point(currentPosition.X - 1, currentPosition.Y)) && hitSomething == false)
+            {
                 currentPosition.X -= 1;
                 if (b.GetPieceAt(currentPosition).player.GetID() == 0)
                 {
@@ -44,7 +45,7 @@ namespace ChessGame
             hitSomething = false;
             currentPosition = new Point(position.X, position.Y);
             //right
-            while (b.pointExists(new Point(position.X, position.Y + 1)) && hitSomething == false)
+            while (b.pointExists(new Point(currentPosition.X, currentPosition.Y + 1)) && hitSomething == false)
             {
                 currentPosition.Y += 1;
                 if (b.GetPieceAt(currentPosition).player.GetID() == 0)
@@ -65,7 +66,7 @@ namespace ChessGame
             hitSomething = false;
             currentPosition = new Point(position.X, position.Y);
             //down
-            while (b.pointExists(new Point(position.X + 1, position.Y)) && hitSomething == false)
+            while (b.pointExists(new Point(currentPosition.X + 1, currentPosition.Y)) && hitSomething == false)
             {
                 currentPosition.X += 1;
                 if (b.GetPieceAt(currentPosition).player.GetID() == 0)
@@ -86,7 +87,7 @@ namespace ChessGame
             hitSomething = false;
             currentPosition = new Point(position.X, position.Y);
             //left
-            while (b.pointExists(new Point(position.X, position.Y - 1)) && hitSomething == false)
+            while (b.pointExists(new Point(currentPosition.X, currentPosition.Y - 1)) && hitSomething == false)
             {
                 currentPosition.Y -= 1;
                 if (b.GetPieceAt(currentPosition).player.GetID() == 0)
