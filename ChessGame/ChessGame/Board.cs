@@ -83,6 +83,20 @@ namespace ChessGame
             }
         }
 
+        public Point GetPiecePosition(Piece p)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if(Object.ReferenceEquals(board[i,j], p)){
+                        return new Point(i,j);
+                    }
+                }
+            }
+            throw new Exception("Piece not found on board");
+        }
+
         public void SetPieceAt(Point p, Piece piece)
         {
             board[p.X, p.Y] = piece;
