@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class Board
+    public class Board
     {
         Piece[,] board;
         Board observer;

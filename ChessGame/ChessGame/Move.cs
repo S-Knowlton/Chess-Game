@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class Move
+    public class Move
     {
 
         Point Start

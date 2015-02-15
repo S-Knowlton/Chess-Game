@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    abstract class Piece
+    public abstract class Piece
     {
         Point position;
         public Player player;
