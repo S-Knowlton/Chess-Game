@@ -319,6 +319,7 @@ namespace ChessGame
             if (null != aiMove)
             {
                 board2.MakeMove(aiMove);
+                SetBorderToBlue(7 - aiMove.End.X, 7 - aiMove.End.Y);
             }
             else
             {
@@ -337,6 +338,15 @@ namespace ChessGame
             {
                 border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
             }
+        }
+
+        public void SetBorderToBlue(int row, int col)
+        {
+            TextBlock wherePlayerMovedTextblock = (TextBlock)blocks[row][col];
+            Viewbox wherePlayerMovedParent = (Viewbox)wherePlayerMovedTextblock.Parent;
+            Border wherePlayerMovedBorder = (Border)wherePlayerMovedParent.Parent;
+
+            wherePlayerMovedBorder.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 255));
         }
 
         /*
