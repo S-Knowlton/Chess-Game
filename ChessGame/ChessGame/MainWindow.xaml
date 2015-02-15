@@ -95,7 +95,7 @@
 
 
             <!-- row 1-->
-            <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Background="Thistle" Height="30" VerticalAlignment="Top">
+            <Border Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Background="Thistle" VerticalAlignment="Top">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock x:Name="a7" MouseDown="a8_MouseDown"/>
                 </Viewbox>
