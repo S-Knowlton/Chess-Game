@@ -153,6 +153,8 @@ namespace ChessGame
             {
                 App.Current.Properties["ActivePlayer"] = "White";
             }
+
+            changed();
             
         }
 
