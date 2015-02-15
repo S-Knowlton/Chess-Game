@@ -92,11 +92,11 @@ namespace ChessGame
                     board[7 - i, 7- j] = tempPiece;
 
                     //set piece positions for their respective boards
-                    if(tempPiece.player.GetID() == 1)
+                    if(tempPiece.player.GetID() != 2)
                     {
                         tempPiece.SetPosition(new Point(i, j));
                     }
-                    else if (tempPiece.player.GetID() == 2)
+                    else
                     {
                         tempPiece.SetPosition(new Point(7 - i, 7 - j));
                     }
@@ -142,6 +142,15 @@ namespace ChessGame
 
             board[start.X, start.Y] = new EmptyPiece();
             board[end.X, end.Y] = firstPiece;
+
+            if ((string)App.Current.Properties["ActivePlayer"] == "White")
+            {
+                App.Current.Properties["ActivePlayer"] = "Black";
+            }
+            else
+            {
+                App.Current.Properties["ActivePlayer"] = "White";
+            }
             
         }
 
