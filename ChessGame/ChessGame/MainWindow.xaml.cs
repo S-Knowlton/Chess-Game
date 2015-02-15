@@ -198,34 +198,51 @@ namespace ChessGame
                     m.End = p.position;
                     board1.MakeMove(m);
                     previousPiece = null;
+                    UpdateBoard(board1);
+
+
+                    IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
+
+                    foreach (Border border in borders)
+                    {
+                        border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
+                    }
                 }
                 else
                 {
                     HighlightSpots(p);
                 }
             }
-            if (previousPiece != null && previousPiece.player.GetID() == 2) {
+            else if (previousPiece.player.GetID() == 2) {
                 List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board2);
                 if (endSpaces != null && endSpaces.Contains(p.position))
                 {
                     Move m = new Move();
                     m.Start = previousPiece.position;
-                    m.End = p.position;
+                    m.End = new System.Drawing.Point(7 - p.position.X, 7 - p.position.Y);
                     previousPiece = null;
                     board2.MakeMove(m);
 
+                    // THIS NEEDS TO BE A DIFFERENT BOARD
+                    UpdateBoard(board2);
+
+
+                    IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
+
+                    foreach (Border border in borders)
+                    {
+                        border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
+                    }
                 }
                 else
                 {
                     HighlightSpots(p);
                 }
             }
-            if (previousPiece != null && previousPiece.player.GetID() == 0)
+            else if (previousPiece.player.GetID() == 0)
             {
                 HighlightSpots(p);
             }
-
-            UpdateBoard(board1);
         }
 
         private void a8_MouseDown(object sender, MouseButtonEventArgs e)
