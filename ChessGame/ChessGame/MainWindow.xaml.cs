@@ -42,7 +42,7 @@ namespace ChessGame
 
         }
 
-        public void setup()
+        void setup()
         {
                 Player p1 = new Player(1);
                 Player p2 = new Player(2);
