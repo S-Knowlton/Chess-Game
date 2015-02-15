@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
+    /*
+     * Provides a record of whose turn it is
+     */ 
     public class Player
     {
         int id;

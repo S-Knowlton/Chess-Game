@@ -15,6 +15,9 @@ namespace ChessGame
            
         }
 
+        /*
+         * Returns points the knight could move to
+         */ 
         public override List<Point> getPossibleEndSpaces(Board b)
         {
             Point upLeft = new Point(position.X - 2, position.Y - 1);

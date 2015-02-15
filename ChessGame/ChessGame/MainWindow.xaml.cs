@@ -30,6 +30,9 @@ namespace ChessGame
         Board board2;
         Piece previousPiece;
 
+        /*
+         * Entry point of the program. Initializes everything 
+         */
         public MainWindow()
         {
 
@@ -42,6 +45,9 @@ namespace ChessGame
 
         }
 
+        /*
+         * Initializes the board, clears the previous selected pieces, sets the active player, updates the GUI
+         */ 
         void setup()
         {
                 Player p1 = new Player(1);
@@ -54,6 +60,10 @@ namespace ChessGame
                 UpdateBoard(board1);
         }
 
+        /*
+         * Lists the textblocks
+         * Hashes unicode chess characters by Piece subclass
+         */ 
         void InitLists()
         {
             blocks = new List<List<TextBlock>>();
@@ -108,7 +118,9 @@ namespace ChessGame
             whitePieces.Add(typeof(Queen), "\u2655");
             whitePieces.Add(typeof(King), "\u2654");
         }
-
+        /*
+         * Updates the GUI to reflect the board passed in (this should be board1 throughout the program)
+         */ 
         public void UpdateBoard(Board b)
         {
             for (int i = 0; i < 8; i++)
@@ -138,6 +150,9 @@ namespace ChessGame
             Thing.Text = (string)App.Current.Properties["ActivePlayer"];
         }
 
+        /*
+         * Outlines points to move to in red (GUI)
+         */ 
         private void HighlightSpots(Piece p)
         {
             IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
@@ -188,6 +203,11 @@ namespace ChessGame
             }
         }
 
+        /*
+         * Does operation to move a piece
+         * Called on click. May or may not result in actual move
+         * Triggers AI action if specified
+         */ 
         private void MovePiece(Piece p)
         {
 
@@ -287,11 +307,15 @@ namespace ChessGame
 
         }
 
+        /*
+         * Calls for AI to make its move
+         */ 
         private void AIStep()
         {
             KyleAI ai = new KyleAI(this);
 
             Move aiMove = ai.GetMove(board2);
+
             if (null != aiMove)
             {
                 board2.MakeMove(aiMove);
@@ -302,6 +326,9 @@ namespace ChessGame
             }
         }
 
+        /*
+         * Resets all borders on the GUI
+         */ 
         private void clearBorders()
         {
             IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
@@ -312,6 +339,10 @@ namespace ChessGame
             }
         }
 
+        /*
+         * Handles any click on the GUI
+         * Triggers movePiece if on highlighted textfield
+         */ 
         private void a8_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Debug.WriteLine("I was clicked!");
@@ -342,6 +373,10 @@ namespace ChessGame
             }
         }
 
+        /*
+         * Called by refresh button
+         * Resets GUI, board, and active player
+         */ 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             setup();

@@ -12,6 +12,9 @@ namespace ChessGame
         Piece[,] board;
         Board observer;
 
+        /*
+         * Initializes the board with a new set of pieces
+         */ 
         public Board(Player p1, Player p2){
             board = new Piece[8,8];
 
@@ -55,27 +58,10 @@ namespace ChessGame
             }
         }
 
-        public bool pointExists(Point p)
-        {
-            if (p.X > 7 || p.Y > 7 || p.X < 0 || p.Y < 0)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        void changed()
-        {
-            //update observer board without calling setPieceAt
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    observer.board[7 - i, 7 - j] = GetPieceAt(new Point(i, j));
-                }
-            }
-        }
-
+        /*
+         * Constructor for the second board in the symmetrical observer pattern. Either board
+         * notifies the other if it is changed.
+         */ 
         public Board(Board b)
         {
             observer = b;
@@ -83,6 +69,7 @@ namespace ChessGame
 
             board = new Piece[8, 8];
 
+            //generate flipped board (opponent's perspective)
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
@@ -104,6 +91,36 @@ namespace ChessGame
             }
         }
 
+        /*
+         * Returns true if the point is on the board. False otherwise
+         */ 
+        public bool pointExists(Point p)
+        {
+            if (p.X > 7 || p.Y > 7 || p.X < 0 || p.Y < 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /*
+         * Called when the board is changed. Fundamental to the symmetrical observer pattern
+         */ 
+        void changed()
+        {
+            //update observer board without calling setPieceAt
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    observer.board[7 - i, 7 - j] = GetPieceAt(new Point(i, j));
+                }
+            }
+        }
+
+        /*
+         * Returns where the parameter piece is located on the board
+         */ 
         public Point GetPiecePosition(Piece p)
         {
             for (int i = 0; i < 8; i++)
@@ -119,21 +136,20 @@ namespace ChessGame
             throw new Exception("Piece not found on board");
         }
 
-        public void SetPieceAt(Point p, Piece piece)
-        {
-            board[p.X, p.Y] = piece;
-            changed();
-        }
-
+        /*
+         * Returns the piece at a specific point on the board.
+         */
         public Piece GetPieceAt(Point p)
         {
             return board[p.X, p.Y];
         }
 
-        int GetPlayerAt(Point p){
-            return 0;
-        }
-
+        /*
+         * Called when the board needs to move pieces around. 
+         * Moves pieces
+         * Switches the active player
+         * Calls changed()
+         */ 
         public void MakeMove(Move m)
         {
             Point start = m.Start;
@@ -168,6 +184,8 @@ namespace ChessGame
             changed();            
         }
 
+        /* For debugging purposes
+          
         public void PrintBoard(){
             for (int i = 0; i < 8; i++)
             {
@@ -178,5 +196,6 @@ namespace ChessGame
                 System.Console.WriteLine("");
             }
         }
+        */
     }
 }

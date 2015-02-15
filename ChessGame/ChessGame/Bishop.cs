@@ -15,6 +15,10 @@ namespace ChessGame
 
         }
 
+        /*
+         * To generate possible moves, use 'currentPosition' to keep track of a line. When
+         * it encounters a piece, stop moving in that direction, and mark if the spot is a viable move
+         */
         public override List<Point> getPossibleEndSpaces(Board b)
         {
             List<Point> endSpaces = new List<Point>();

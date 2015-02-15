@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
+    /*
+     * Placeholder piece on a board. Represents an empty space
+     */ 
     class EmptyPiece : Piece
     {
 

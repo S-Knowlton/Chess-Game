@@ -14,6 +14,9 @@ namespace ChessGame
             
         }
 
+        /*
+         * Returns a list of points the pawn can move to
+         */ 
         public override List<Point> getPossibleEndSpaces(Board board)
         {
             Point oneForward = new Point(position.X - 1, position.Y);

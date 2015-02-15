@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
+    /*
+     * Contains two points: start, and end, repsectively (referring to points on a board)
+     */ 
     public class Move
     {
 

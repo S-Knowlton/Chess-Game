@@ -15,6 +15,9 @@ namespace ChessGame
 
         }
 
+        /*
+         * Returns possible points the king could move to on the specified board
+         */
         public override List<Point> getPossibleEndSpaces(Board b)
         {
             List<Point> endSpaces = new List<Point>();

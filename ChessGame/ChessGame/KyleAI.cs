@@ -17,12 +17,16 @@ namespace ChessGame
             owner = o;
         }
 
+        /*
+         * Returns the move specified by the AI
+         */ 
         public Move GetMove(Board b){
 
             List<Piece> pieces = GetBlackPieces(b);
 
             List<Move> moves = getAllMoves(b, pieces);
 
+            //if we're out of pieces, we lose (reset the game)
             if (pieces.Count == 0)
             {
                 return null;
@@ -51,11 +55,11 @@ namespace ChessGame
                     }
                 }
 
-                if (canTake)
+                if (canTake) //take it
                 {
                     return takeMoves[rand.Next(takeMoves.Count())];
                 }
-                else
+                else //do a random move
                 {
                     return moves[rand.Next(moves.Count())];
                 }
@@ -79,6 +83,9 @@ namespace ChessGame
             return moves;
         }
 
+        /*
+         * Returns a list of black pieces on the specified board
+         */ 
         public List<Piece> GetBlackPieces(Board b)
         {
             List<Piece> pieces = new List<Piece>();
@@ -98,6 +105,9 @@ namespace ChessGame
             return pieces;
         }
 
+        /*
+         * returns a list of white pieces on the specified board
+         */
         public List<Piece> GetWhitePieces(Board b)
         {
             List<Piece> pieces = new List<Piece>();

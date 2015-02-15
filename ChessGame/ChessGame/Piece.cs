@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
+
+    /*
+     * Chess pieces implement these methods and fields.
+     */ 
     public abstract class Piece
     {
         public Point position;
         public Player player;
 
-        //abstract methods here
 
         public Piece(Player p)
         {
