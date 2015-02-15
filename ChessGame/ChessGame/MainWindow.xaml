@@ -7,7 +7,7 @@
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Margin="0, 25, 0, 25">
+        <Grid x:Name="MyGrid" Grid.Column="0" Margin="0, 25, 0, 25">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -54,42 +54,42 @@
             <!-- row 0-->
             <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="a8"/>
+                    <TextBlock x:Name="a8" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="2" Grid.Row="0" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="b8"/>
+                    <TextBlock x:Name="b8" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="3" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="c8"/>
+                    <TextBlock x:Name="c8" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="4" Grid.Row="0" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="d8"/>
+                    <TextBlock x:Name="d8" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="5" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="e8"/>
+                    <TextBlock x:Name="e8" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="6" Grid.Row="0" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="f8"/>
+                    <TextBlock x:Name="f8" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="7" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="g8"/>
+                    <TextBlock x:Name="g8" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="0" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="h8"/>
+                    <TextBlock x:Name="h8" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
 
@@ -297,7 +297,7 @@
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
-                <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="Viewbox_MouseDown">
                     <TextBlock x:Name="h3" />
                 </Viewbox>
             </Border>
@@ -391,7 +391,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
-                <TextBlock Width="75" DockPanel.Dock="Top" Grid.Row="0"/>
+                <TextBlock x:Name="Thing" Width="75" DockPanel.Dock="Top" Grid.Row="0"/>
             </ScrollViewer>
             <TextBox DockPanel.Dock="Bottom" Grid.Row="1"/>
         </Grid>
