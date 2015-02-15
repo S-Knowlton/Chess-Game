@@ -55,6 +55,15 @@ namespace ChessGame
             }
         }
 
+        public bool pointExists(Point p)
+        {
+            if (p.X > 7 || p.Y > 7)
+            {
+                return false;
+            }
+            return true;
+        }
+
         void changed()
         {
             //update observer board without calling setPieceAt
