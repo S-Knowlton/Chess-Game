@@ -143,6 +143,8 @@ namespace ChessGame
             board[start.X, start.Y] = new EmptyPiece();
             board[end.X, end.Y] = firstPiece;
 
+            firstPiece.position = new Point(end.X, end.Y);
+
             if ((string)App.Current.Properties["ActivePlayer"] == "White")
             {
                 App.Current.Properties["ActivePlayer"] = "Black";
