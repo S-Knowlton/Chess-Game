@@ -41,12 +41,12 @@ namespace ChessGame
 
                 //taking a piece (we will not allow 'en pesante')
                 //checks right and left bounds
-                if (position.Y != 7 && position.Y != 0 && board.GetPieceAt(takeRight).player.GetID() != 0 && board.GetPieceAt(takeRight).player.GetID() != player.GetID())
+                if (position.Y != 7 && board.GetPieceAt(takeRight).player.GetID() != 0 && board.GetPieceAt(takeRight).player.GetID() != player.GetID())
                 {
                     endSpaces.Add(takeRight);
                 }
 
-                if (position.Y != 7 && position.Y != 0 && board.GetPieceAt(takeLeft).player.GetID() != 0 && board.GetPieceAt(takeLeft).player.GetID() != player.GetID())
+                if (position.Y != 0 && board.GetPieceAt(takeLeft).player.GetID() != 0 && board.GetPieceAt(takeLeft).player.GetID() != player.GetID())
                 {
                     endSpaces.Add(takeLeft);
                 }
