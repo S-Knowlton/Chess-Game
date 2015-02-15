@@ -10,13 +10,13 @@ namespace ChessGame
     public class Move
     {
 
-        Point Start
+        public Point Start
         {
             get;
             set;
 
         }
-        Point End
+        public Point End
         {
             get;
             set;

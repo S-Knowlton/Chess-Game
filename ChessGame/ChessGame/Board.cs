@@ -98,6 +98,17 @@ namespace ChessGame
             return 0;
         }
 
+        public void MakeMove(Move m)
+        {
+            Point start = m.Start;
+            Point end = m.End;
+            Piece firstPiece = board[start.X, start.Y];
+
+            board[start.X, start.Y] = new EmptyPiece();
+            board[end.X, end.Y] = firstPiece;
+            
+        }
+
         public void PrintBoard(){
             for (int i = 0; i < 8; i++)
             {
