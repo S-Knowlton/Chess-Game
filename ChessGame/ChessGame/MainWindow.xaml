@@ -102,203 +102,203 @@
             </Border>
             <Border Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="b7"/>
+                    <TextBlock x:Name="b7" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="3" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="c7"/>
+                    <TextBlock x:Name="c7" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="4" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="d7"/>
+                    <TextBlock x:Name="d7" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="5" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="e7"/>
+                    <TextBlock x:Name="e7" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="6" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="f7"/>
+                    <TextBlock x:Name="f7" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="7" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="g7"/>
+                    <TextBlock x:Name="g7" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="h7"/>
+                    <TextBlock x:Name="h7" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
 
             <!-- row 2 -->
             <Border Grid.Column="1" Grid.Row="2" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="a6"/>
+                    <TextBlock x:Name="a6" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="2" Grid.Row="2" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock x:Name="b6"/>
+                    <TextBlock x:Name="b6" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="3" Grid.Row="2" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock x:Name="c6"/>
+                    <TextBlock x:Name="c6" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="4" Grid.Row="2" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock x:Name="d6"/>
+                    <TextBlock x:Name="d6" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="5" Grid.Row="2" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock x:Name="e6"/>
+                    <TextBlock x:Name="e6" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="6" Grid.Row="2" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock x:Name="f6"/>
+                    <TextBlock x:Name="f6" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="7" Grid.Row="2" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="g6"/>
+                    <TextBlock x:Name="g6" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="2" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="h6"/>
+                    <TextBlock x:Name="h6" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
 
             <!-- row 3 -->
             <Border Grid.Column="1" Grid.Row="3" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="a5" />
+                    <TextBlock x:Name="a5" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="2" Grid.Row="3" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="b5" />
+                    <TextBlock x:Name="b5" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="3" Grid.Row="3" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="c5" />
+                    <TextBlock x:Name="c5" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="4" Grid.Row="3" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="d5" />
+                    <TextBlock x:Name="d5" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="5" Grid.Row="3" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="e5" />
+                    <TextBlock x:Name="e5" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="6" Grid.Row="3" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="f5" />
+                    <TextBlock x:Name="f5" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="7" Grid.Row="3" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="g5" />
+                    <TextBlock x:Name="g5" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="3" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="h5" />
+                    <TextBlock x:Name="h5" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
 
             <Border Grid.Column="1" Grid.Row="4" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="a4" />
+                    <TextBlock x:Name="a4" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="2" Grid.Row="4" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="b4" />
+                    <TextBlock x:Name="b4" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="3" Grid.Row="4" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="c4" />
+                    <TextBlock x:Name="c4" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="4" Grid.Row="4" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="d4" />
+                    <TextBlock x:Name="d4" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="5" Grid.Row="4" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="e4" />
+                    <TextBlock x:Name="e4" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="6" Grid.Row="4" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="f4" />
+                    <TextBlock x:Name="f4" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="7" Grid.Row="4" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="g4" />
+                    <TextBlock x:Name="g4" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="4" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="h4" />
+                    <TextBlock x:Name="h4" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
 
             <Border Grid.Column="1" Grid.Row="5" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="a3" />
+                    <TextBlock x:Name="a3" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="2" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="b3" />
+                    <TextBlock x:Name="b3" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="3" Grid.Row="5" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="c3" />
+                    <TextBlock x:Name="c3" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="4" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="d3" />
+                    <TextBlock x:Name="d3" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="5" Grid.Row="5" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="e3" />
+                    <TextBlock x:Name="e3" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="6" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="f3" />
+                    <TextBlock x:Name="f3" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="7" Grid.Row="5" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="g3" />
+                    <TextBlock x:Name="g3" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="Viewbox_MouseDown">
-                    <TextBlock x:Name="h3" />
+                    <TextBlock x:Name="h3" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
 
@@ -309,78 +309,78 @@
             </Border>
             <Border Grid.Column="2" Grid.Row="6" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="b2" />
+                    <TextBlock x:Name="b2" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="3" Grid.Row="6" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="c2" />
+                    <TextBlock x:Name="c2" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="4" Grid.Row="6" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="d2" />
+                    <TextBlock x:Name="d2" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="5" Grid.Row="6" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="e2" />
+                    <TextBlock x:Name="e2" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="6" Grid.Row="6" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="f2" />
+                    <TextBlock x:Name="f2" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="7" Grid.Row="6" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="g2" />
+                    <TextBlock x:Name="g2" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="6" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="h2" />
+                    <TextBlock x:Name="h2" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
 
             <Border Grid.Column="1" Grid.Row="7" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="a1" />
+                    <TextBlock x:Name="a1" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="2" Grid.Row="7" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="b1" />
+                    <TextBlock x:Name="b1" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="3" Grid.Row="7" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="c1" />
+                    <TextBlock x:Name="c1" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="4" Grid.Row="7" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="d1" />
+                    <TextBlock x:Name="d1" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="5" Grid.Row="7" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="e1" />
+                    <TextBlock x:Name="e1" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="6" Grid.Row="7" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="f1" />
+                    <TextBlock x:Name="f1" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="7" Grid.Row="7" BorderBrush="Black" BorderThickness="2" Background="Thistle">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="g1" />
+                    <TextBlock x:Name="g1" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="7" BorderBrush="Black" BorderThickness="2">
                 <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock x:Name="h1" />
+                    <TextBlock x:Name="h1" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>
 
