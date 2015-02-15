@@ -198,7 +198,6 @@ namespace ChessGame
                     m.End = p.position;
                     board1.MakeMove(m);
                     previousPiece = null;
-                    UpdateBoard(board1);
 
 
                     IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
@@ -223,9 +222,6 @@ namespace ChessGame
                     previousPiece = null;
                     board2.MakeMove(m);
 
-                    // THIS NEEDS TO BE A DIFFERENT BOARD
-                    UpdateBoard(board2);
-
 
                     IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
 
@@ -243,6 +239,8 @@ namespace ChessGame
             {
                 HighlightSpots(p);
             }
+
+            UpdateBoard(board1);
         }
 
         private void a8_MouseDown(object sender, MouseButtonEventArgs e)
