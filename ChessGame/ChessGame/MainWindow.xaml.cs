@@ -157,16 +157,19 @@ namespace ChessGame
         {
             IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
 
+            //generate brushes
+            SolidColorBrush BlackBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
+            SolidColorBrush RedBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 0, 0));
+
             foreach (Border border in borders)
             {
-                border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
+                border.BorderBrush = BlackBrush;
             }
 
             // this is the default view
             if (p.player.GetID() == 2)
             {
 
-                //Thing.Text = "clicked";
                 List<System.Drawing.Point> endSpaces = p.getPossibleEndSpaces(board2);
                 if (endSpaces != null)
                 {
@@ -177,8 +180,7 @@ namespace ChessGame
                         TextBlock current = blocks[7 - endSpaces[i].X][7 - endSpaces[i].Y];
                         Viewbox currentViewbox = (Viewbox)current.Parent;
                         Border currentBorder = (Border)currentViewbox.Parent;
-                        SolidColorBrush tempBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 0, 0));
-                        currentBorder.BorderBrush = tempBrush;
+                        currentBorder.BorderBrush = RedBrush;
                     }
                 }
             }
@@ -186,7 +188,6 @@ namespace ChessGame
             if (p.player.GetID() == 1)
             {
 
-                //Thing.Text = "clicked";
                 List<System.Drawing.Point> endSpaces = p.getPossibleEndSpaces(board1);
 
                 if (endSpaces != null)
@@ -196,8 +197,7 @@ namespace ChessGame
                         TextBlock current = blocks[endSpaces[i].X][endSpaces[i].Y];
                         Viewbox currentViewbox = (Viewbox)current.Parent;
                         Border currentBorder = (Border)currentViewbox.Parent;
-                        SolidColorBrush tempBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(255, 0, 0));
-                        currentBorder.BorderBrush = tempBrush;
+                        currentBorder.BorderBrush = RedBrush;
                     }
                 }
             }
