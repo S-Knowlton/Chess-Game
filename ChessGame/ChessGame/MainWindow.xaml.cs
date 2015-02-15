@@ -38,10 +38,13 @@ namespace ChessGame
 
             Player p1 = new Player(1);
             Player p2 = new Player(2);
+            App.Current.Properties["ActivePlayer"] = "p1";
 
             board1 = new Board(p1, p2);
             board2 = new Board(board1);
             UpdateBoard(board1);
+
+
         }
 
         void InitLists()
@@ -124,6 +127,8 @@ namespace ChessGame
                     }
                 }
             }
+
+            Thing.Text = (string)App.Current.Properties["ActivePlayer"];
         }
 
         private void a8_MouseDown(object sender, MouseButtonEventArgs e)
@@ -152,7 +157,7 @@ namespace ChessGame
             if (p.player.GetID() == 2)
             {
 
-                Thing.Text = "clicked";
+                //Thing.Text = "clicked";
                 List<System.Drawing.Point> endSpaces = p.getPossibleEndSpaces(board2);
                 if (endSpaces != null)
                 {
@@ -170,7 +175,7 @@ namespace ChessGame
             if (p.player.GetID() == 1)
             {
 
-                Thing.Text = "clicked";
+                //Thing.Text = "clicked";
                 List<System.Drawing.Point> endSpaces = p.getPossibleEndSpaces(board1);
 
                 if (endSpaces != null)
