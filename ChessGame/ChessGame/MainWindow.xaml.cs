@@ -225,7 +225,7 @@ namespace ChessGame
             else if (previousPiece.player.GetID() == 2) {
                 List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board2);
                 System.Drawing.Point piecePosition = p.position;
-                if (p.player.GetID() == 0)
+                if (p.player.GetID() != 2)
                 {
                     piecePosition = new System.Drawing.Point(7 - p.position.X, 7 - p.position.Y);
                 }
