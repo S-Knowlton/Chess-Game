@@ -22,7 +22,7 @@ namespace ChessGame
             Point takeLeft = new Point(position.X - 1, position.Y + 1);
 
             List<Point> endSpaces = new List<Point>();
-
+ 
             //checks forward bounds
             if (position.X != 0)
             {

@@ -40,7 +40,7 @@ namespace ChessGame
             Player p2 = new Player(2);
 
             board1 = new Board(p1, p2);
-            board2 = new Board(p2, p1);
+            board2 = new Board(board1);
             UpdateBoard(board1);
         }
 
