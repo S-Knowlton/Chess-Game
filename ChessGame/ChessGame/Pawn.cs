@@ -16,24 +16,24 @@ namespace ChessGame
 
         public override List<Point> getPossibleEndSpaces(Board board)
         {
-            Point oneForward = new Point(position.X + 1, position.Y);
-            Point twoForward = new Point(3, position.Y);
-            Point takeRight = new Point(position.X + 1, position.Y - 1);
-            Point takeLeft = new Point(position.X + 1, position.Y + 1);
+            Point oneForward = new Point(position.X - 1, position.Y);
+            Point twoForward = new Point(position.X - 2, position.Y);
+            Point takeRight = new Point(position.X - 1, position.Y - 1);
+            Point takeLeft = new Point(position.X - 1, position.Y + 1);
 
             List<Point> endSpaces = new List<Point>();
 
             //checks forward bounds
-            if (position.X != 7)
+            if (position.X != 0)
             {
 
                 //the space in front of it
-                if (board.GetPieceAt(oneForward).player.GetID() != player.GetID())
+                if (board.GetPieceAt(oneForward).player.GetID() == 0)
                 {
                     endSpaces.Add(oneForward);
 
                     //if it hasn't moved yet
-                    if (position.X == 1 && board.GetPieceAt(twoForward).player.GetID() != player.GetID())
+                    if (position.X == 6 && board.GetPieceAt(twoForward).player.GetID() == 0)
                     {
                         endSpaces.Add(twoForward);
                     }

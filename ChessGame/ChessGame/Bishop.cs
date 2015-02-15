@@ -19,7 +19,7 @@ namespace ChessGame
         {
             List<Point> endSpaces = new List<Point>();
 
-            //upLeft
+            //downLeft
             bool hitSomething = false;
             Point currentPosition = new Point(position.X, position.Y);
             while (b.pointExists(new Point(position.X + 1, position.Y - 1)) && hitSomething == false)
@@ -42,7 +42,7 @@ namespace ChessGame
                 }
             }
 
-            //upRight
+            //downRight
             hitSomething = false;
             currentPosition = new Point(position.X, position.Y);
             while (b.pointExists(new Point(position.X + 1, position.Y + 1)) && hitSomething == false)
@@ -65,7 +65,7 @@ namespace ChessGame
                 }
             }
 
-            //downLeft
+            //upLeft
             hitSomething = false;
             currentPosition = new Point(position.X, position.Y);
             while (b.pointExists(new Point(position.X - 1, position.Y - 1)) && hitSomething == false)
@@ -88,7 +88,7 @@ namespace ChessGame
                 }
             }
 
-            //downRight
+            //upRight
             hitSomething = false;
             currentPosition = new Point(position.X, position.Y);
             while (b.pointExists(new Point(position.X - 1, position.Y + 1)) && hitSomething == false)
