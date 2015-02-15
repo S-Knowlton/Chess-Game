@@ -19,6 +19,14 @@ namespace ChessGame
             player = p;
         }
 
+        public void SetPosition(Point p){
+            position = p;
+        }
+
+        public Point GetPosition(){
+            return position;
+        }
+
         public abstract List<Move> getPossibleMoves(Board board);
 
         public override abstract string ToString();
