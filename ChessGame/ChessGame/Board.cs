@@ -74,11 +74,6 @@ namespace ChessGame
             return 0;
         }
 
-        static string PointToBoardName(Point p)
-        {
-            return "not yet implemented";
-        }
-
         public void PrintBoard(){
             for (int i = 0; i < 8; i++)
             {
