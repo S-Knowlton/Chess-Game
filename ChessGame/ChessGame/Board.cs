@@ -82,6 +82,7 @@ namespace ChessGame
 
                     board[7 - i, 7- j] = tempPiece;
 
+                    //set piece positions for their respective boards
                     if(tempPiece.player.GetID() == 1)
                     {
                         tempPiece.SetPosition(new Point(i, j));
