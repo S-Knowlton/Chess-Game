@@ -297,7 +297,7 @@
                 </Viewbox>
             </Border>
             <Border Grid.Column="8" Grid.Row="5" BorderBrush="Black" BorderThickness="2">
-                <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="Viewbox_MouseDown">
+                <Viewbox Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock x:Name="h3" MouseDown="a8_MouseDown"/>
                 </Viewbox>
             </Border>

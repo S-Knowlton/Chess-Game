@@ -28,6 +28,7 @@ namespace ChessGame
         Dictionary<Type, string> whitePieces;
         Board board1;
         Board board2;
+        Piece previousPiece;
 
         public MainWindow()
         {
@@ -42,6 +43,7 @@ namespace ChessGame
 
             board1 = new Board(p1, p2);
             board2 = new Board(board1);
+            previousPiece = null;
             UpdateBoard(board1);
 
 
@@ -123,7 +125,7 @@ namespace ChessGame
                     }
                     else if (b.GetPieceAt(p).player.GetID() == 0)
                     {
-                        blocks[i][j].Text = "";
+                        blocks[i][j].Text = "  ";
                     }
                 }
             }
@@ -131,27 +133,14 @@ namespace ChessGame
             Thing.Text = (string)App.Current.Properties["ActivePlayer"];
         }
 
-        private void a8_MouseDown(object sender, MouseButtonEventArgs e)
+        private void HighlightSpots(Piece p)
         {
             IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
 
-            foreach (Border border in borders) {
+            foreach (Border border in borders)
+            {
                 border.BorderBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 0, 0));
             }
-            TextBlock s = (TextBlock) sender;
-            Viewbox v = (System.Windows.Controls.Viewbox) s.Parent;
-            Border b = (Border)v.Parent;
-            int row = Grid.GetRow(b);
-
-            // will have to subtract 1 from column
-            int col = Grid.GetColumn(b) - 1;
-            Debug.WriteLine("row is " + row);
-            Debug.WriteLine("col is " + col);
-
-            // get piece from board at this position
-            Piece p = board1.GetPieceAt(new System.Drawing.Point(row, col));
-
-            Debug.WriteLine(p);
 
             // this is the default view
             if (p.player.GetID() == 2)
@@ -163,6 +152,8 @@ namespace ChessGame
                 {
                     for (int i = 0; i < endSpaces.Count; i++)
                     {
+                        Debug.WriteLine("x: " + endSpaces[i].X);
+                        Debug.WriteLine("y: " + endSpaces[i].Y);
                         TextBlock current = blocks[7 - endSpaces[i].X][7 - endSpaces[i].Y];
                         Viewbox currentViewbox = (Viewbox)current.Parent;
                         Border currentBorder = (Border)currentViewbox.Parent;
@@ -190,14 +181,78 @@ namespace ChessGame
                     }
                 }
             }
-
-
-            // add checks for correct player
         }
 
-        private void Viewbox_MouseDown(object sender, MouseButtonEventArgs e)
+        private void MovePiece(Piece p)
         {
 
+            // check if piece can move to that place
+            if (previousPiece.player.GetID() == 1)
+            {
+                List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board1);
+                if (endSpaces != null && endSpaces.Contains(p.position)) {
+                    // this move is allowed!
+                    Move m = new Move();
+
+                    m.Start = previousPiece.position;
+                    m.End = p.position;
+                    board1.MakeMove(m);
+                    UpdateBoard(board1);
+                }
+                else
+                {
+                    HighlightSpots(p);
+                }
+            }
+            if (previousPiece.player.GetID() == 2) {
+                List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board1);
+                if (endSpaces != null && endSpaces.Contains(p.position))
+                {
+                    Move m = new Move();
+                    m.Start = previousPiece.position;
+                    m.End = p.position;
+                    board2.MakeMove(m);
+                    UpdateBoard(board2);
+                }
+                else
+                {
+                    HighlightSpots(p);
+                }
+            }
+            if (previousPiece.player.GetID() == 0)
+            {
+                HighlightSpots(p);
+            }
+        }
+
+        private void a8_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Debug.WriteLine("I was clicked!");
+
+            TextBlock s = (TextBlock) sender;
+            Viewbox v = (System.Windows.Controls.Viewbox) s.Parent;
+            Border b = (Border)v.Parent;
+            int row = Grid.GetRow(b);
+
+            // will have to subtract 1 from column
+            int col = Grid.GetColumn(b) - 1;
+            Debug.WriteLine("row is " + row);
+            Debug.WriteLine("col is " + col);
+
+            // get piece from board at this position
+            Piece p = board1.GetPieceAt(new System.Drawing.Point(row, col));
+
+            Debug.WriteLine(p);
+
+            if (previousPiece == null)
+            {
+                HighlightSpots(p);
+                previousPiece = p;
+            }
+            else
+            {
+                MovePiece(p);
+            }
         }
 
     }
