@@ -9,7 +9,7 @@ namespace ChessGame
 {
     public abstract class Piece
     {
-        Point position;
+        public Point position;
         public Player player;
 
         //abstract methods here
