@@ -18,8 +18,8 @@ namespace ChessGame
         {
             Point oneForward = new Point(position.X - 1, position.Y);
             Point twoForward = new Point(position.X - 2, position.Y);
-            Point takeRight = new Point(position.X - 1, position.Y - 1);
-            Point takeLeft = new Point(position.X - 1, position.Y + 1);
+            Point takeRight = new Point(position.X - 1, position.Y + 1);
+            Point takeLeft = new Point(position.X - 1, position.Y - 1);
 
             List<Point> endSpaces = new List<Point>();
  
