@@ -78,7 +78,19 @@ namespace ChessGame
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    board[7 - i, 7- j] = b.GetPieceAt(new Point(i, j));
+                    Piece tempPiece = b.GetPieceAt(new Point(i, j));
+
+                    board[7 - i, 7- j] = tempPiece;
+
+                    //set piece positions for their respective boards
+                    if(tempPiece.player.GetID() == 1)
+                    {
+                        tempPiece.SetPosition(new Point(i, j));
+                    }
+                    else if (tempPiece.player.GetID() == 2)
+                    {
+                        tempPiece.SetPosition(new Point(7 - i, 7 - j));
+                    }
                 }
             }
         }
@@ -89,8 +101,9 @@ namespace ChessGame
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if(Object.ReferenceEquals(board[i,j], p)){
-                        return new Point(i,j);
+                    if (Object.ReferenceEquals(board[i, j], p))
+                    {
+                        return new Point(i, j);
                     }
                 }
             }
