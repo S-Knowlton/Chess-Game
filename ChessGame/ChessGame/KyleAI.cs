@@ -24,7 +24,7 @@ namespace ChessGame
 
             List<Piece> pieces = GetBlackPieces(b);
 
-            List<Move> moves = getAllMoves(b, pieces);
+            List<Move> moves = GetAllMoves(b, pieces);
 
             //if we're out of pieces, we lose (reset the game)
             if (pieces.Count == 0)
@@ -66,10 +66,8 @@ namespace ChessGame
             }
         }
 
-        
-
         //pieces must belong to the board passed ID1 = board1, ID2 = board2
-        List<Move> getAllMoves(Board b, List<Piece> pieces)
+        List<Move> GetAllMoves(Board b, List<Piece> pieces)
         {
             List<Move> moves = new List<Move>();
 
