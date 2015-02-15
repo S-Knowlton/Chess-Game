@@ -17,7 +17,101 @@ namespace ChessGame
 
         public override List<Point> getPossibleEndSpaces(Board b)
         {
-            return null;
+            List<Point> endSpaces = new List<Point>();
+
+            //upLeft
+            bool hitSomething = false;
+            Point currentPosition = new Point(position.X, position.Y);
+            while (b.pointExists(new Point(position.X + 1, position.Y - 1)) && hitSomething == false)
+            {
+                currentPosition.X += 1;
+                currentPosition.Y -= 1;
+
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            //upRight
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            while (b.pointExists(new Point(position.X + 1, position.Y + 1)) && hitSomething == false)
+            {
+                currentPosition.X += 1;
+                currentPosition.Y += 1;
+
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            //downLeft
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            while (b.pointExists(new Point(position.X - 1, position.Y - 1)) && hitSomething == false)
+            {
+                currentPosition.X -= 1;
+                currentPosition.Y -= 1;
+
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            //downRight
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            while (b.pointExists(new Point(position.X - 1, position.Y + 1)) && hitSomething == false)
+            {
+                currentPosition.X -= 1;
+                currentPosition.Y += 1;
+
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            return endSpaces;
         }
 
         public override string ToString()
