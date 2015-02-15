@@ -385,15 +385,8 @@
             </Border>
 
         </Grid>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="9*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
-                <TextBlock x:Name="Thing" Width="75" DockPanel.Dock="Top" Grid.Row="0"/>
-            </ScrollViewer>
-            <TextBox DockPanel.Dock="Bottom" Grid.Row="1"/>
-        </Grid>
+        <ScrollViewer Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="Thing" Width="75" DockPanel.Dock="Top" Grid.Row="0"/>
+        </ScrollViewer>
     </Grid>
 </Window>
