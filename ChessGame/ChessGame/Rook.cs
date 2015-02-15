@@ -41,6 +41,8 @@ namespace ChessGame
                 }
             }
 
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
             //right
             while (b.pointExists(new Point(position.X, position.Y + 1)) && hitSomething == false)
             {
@@ -60,6 +62,8 @@ namespace ChessGame
                 }
             }
 
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
             //down
             while (b.pointExists(new Point(position.X + 1, position.Y)) && hitSomething == false)
             {
@@ -79,6 +83,8 @@ namespace ChessGame
                 }
             }
 
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
             //left
             while (b.pointExists(new Point(position.X, position.Y - 1)) && hitSomething == false)
             {
