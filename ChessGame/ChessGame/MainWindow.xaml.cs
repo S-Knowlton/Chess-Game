@@ -30,19 +30,14 @@ namespace ChessGame
         {
 
             InitializeComponent();
+            InitLists();
+
 
             Player p1 = new Player(1);
             Player p2 = new Player(2);
 
             Board board1 = new Board(p1, p2);
-            board1.PrintBoard();
-
-            System.Console.WriteLine("\n\n");
-
-            Board board2 = new Board(board1);
-            board2.PrintBoard();
-
-            InitLists();
+            UpdateBoard(board1);
         }
 
         void InitLists()
@@ -83,21 +78,21 @@ namespace ChessGame
 
             blackPieces = new Dictionary<Type, string>();
 
-            blackPieces.Add(typeof(Pawn), "&#9823;");
-            blackPieces.Add(typeof(Knight), "&#9822;");
-            blackPieces.Add(typeof(Bishop), "&#9821;");
-            blackPieces.Add(typeof(Rook), "&#9820;");
-            blackPieces.Add(typeof(Queen), "&#9819;");
-            blackPieces.Add(typeof(King), "&#9818;");
+            blackPieces.Add(typeof(Pawn), "\u265f");
+            blackPieces.Add(typeof(Knight), "\u265e");
+            blackPieces.Add(typeof(Bishop), "\u265d");
+            blackPieces.Add(typeof(Rook), "\u265c");
+            blackPieces.Add(typeof(Queen), "\u265b");
+            blackPieces.Add(typeof(King), "\u265a");
 
             whitePieces = new Dictionary<Type, string>();
 
-            whitePieces.Add(typeof(Pawn), "&#9817;");
-            whitePieces.Add(typeof(Knight), "&#9816;");
-            whitePieces.Add(typeof(Bishop), "&#9815;");
-            whitePieces.Add(typeof(Rook), "&#9814;");
-            whitePieces.Add(typeof(Queen), "&#9813;");
-            whitePieces.Add(typeof(King), "&#9812;");
+            whitePieces.Add(typeof(Pawn), "\u2659");
+            whitePieces.Add(typeof(Knight), "\u2658");
+            whitePieces.Add(typeof(Bishop), "\u2657");
+            whitePieces.Add(typeof(Rook), "\u2656");
+            whitePieces.Add(typeof(Queen), "\u2655");
+            whitePieces.Add(typeof(King), "\u2654");
         }
 
         public void UpdateBoard(Board b)
@@ -117,7 +112,7 @@ namespace ChessGame
                     else if (b.GetPieceAt(p).player.GetID() == 2)
                     {
                         Type t = b.GetPieceAt(p).GetType();
-                        blocks[i][j].Text = whitePieces[t];
+                        blocks[i][j].Text = blackPieces[t];
                     }
                     else if (b.GetPieceAt(p).player.GetID() == 0)
                     {
