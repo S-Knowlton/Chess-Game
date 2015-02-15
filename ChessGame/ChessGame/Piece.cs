@@ -27,7 +27,7 @@ namespace ChessGame
             return position;
         }
 
-        public abstract List<Move> getPossibleMoves(Board board);
+        public abstract List<Point> getPossibleEndSpaces(Board board);
 
         public override abstract string ToString();
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +16,9 @@ namespace ChessGame
           
         }
 
-        public override List<Move> getPossibleMoves(Board b)
+        public override List<Point> getPossibleEndSpaces(Board b)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public override string ToString(){
