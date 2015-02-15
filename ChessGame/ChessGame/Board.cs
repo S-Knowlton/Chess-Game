@@ -140,7 +140,18 @@ namespace ChessGame
             Point end = m.End;
             Piece firstPiece = board[start.X, start.Y];
 
-            board[start.X, start.Y] = new EmptyPiece();
+            EmptyPiece tempEmptyPiece = new EmptyPiece();
+
+            if (firstPiece.player.GetID() == 2)
+            {
+                tempEmptyPiece.position = new Point(7 - start.X, 7 - start.Y);
+            }
+            else
+            {
+                tempEmptyPiece.position = new Point(start.X, start.Y);
+            }
+
+            board[start.X, start.Y] = tempEmptyPiece;
             board[end.X, end.Y] = firstPiece;
 
             firstPiece.position = new Point(end.X, end.Y);
