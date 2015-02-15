@@ -191,8 +191,17 @@ namespace ChessGame
         private void MovePiece(Piece p)
         {
 
+            if (previousPiece.player.GetID() == 1 && 
+                (p.player.GetID() == 1 && p.position.X == previousPiece.position.X && p.position.Y == previousPiece.position.Y)) {
+                clearBorders();
+            }
+            else if (previousPiece.player.GetID() == 2 &&
+              (p.player.GetID() == 2 && p.position.X == previousPiece.position.X && p.position.Y == previousPiece.position.Y))
+            {
+                clearBorders();
+            } 
             // check if piece can move to that place
-            if (previousPiece.player.GetID() == 1)
+            else if (previousPiece.player.GetID() == 1)
             {
 
                 //if not the right player
