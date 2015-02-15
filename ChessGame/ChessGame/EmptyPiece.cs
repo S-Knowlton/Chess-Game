@@ -17,7 +17,7 @@ namespace ChessGame
 
         public override List<Point> getPossibleEndSpaces(Board board)
         {
-            return null;
+            return new List<Point>();
         }
 
         public override string ToString()
