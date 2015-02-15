@@ -42,11 +42,29 @@ namespace ChessGame
             board[0, 5] = new Bishop(p2);
             board[0, 6] = new Knight(p2);
             board[0, 7] = new Rook(p2);
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (null == board[i, j])
+                    {
+                        board[i, j] = new EmptyPiece();
+                    }
+                }
+            }
         }
 
         void changed()
         {
-
+            //update observer board without calling setPieceAt
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    observer.board[7 - i, 7 - j] = GetPieceAt(new Point(i, j));
+                }
+            }
         }
 
         public Board(Board b)
@@ -63,6 +81,12 @@ namespace ChessGame
                     board[7 - i, 7- j] = b.GetPieceAt(new Point(i, j));
                 }
             }
+        }
+
+        public void SetPieceAt(Point p, Piece piece)
+        {
+            board[p.X, p.Y] = piece;
+            changed();
         }
 
         public Piece GetPieceAt(Point p)
