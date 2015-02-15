@@ -207,7 +207,6 @@ namespace ChessGame
                     m.End = piecePosition;
 
                     board1.MakeMove(m);
-                    previousPiece = null;
 
 
                     IEnumerable<Border> borders = MyGrid.Children.OfType<Border>();
@@ -234,7 +233,6 @@ namespace ChessGame
                     Move m = new Move();
                     m.Start = previousPiece.position;
                     m.End = piecePosition;
-                    previousPiece = null;
                     board2.MakeMove(m);
 
 
@@ -256,6 +254,7 @@ namespace ChessGame
             }
 
             UpdateBoard(board1);
+            previousPiece = null;
         }
 
         private void a8_MouseDown(object sender, MouseButtonEventArgs e)
