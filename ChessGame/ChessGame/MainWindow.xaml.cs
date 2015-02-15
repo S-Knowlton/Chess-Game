@@ -205,7 +205,7 @@ namespace ChessGame
                     HighlightSpots(p);
                 }
             }
-            if (previousPiece != null && previousPiece.player.GetID() == 2) {
+            else if (previousPiece.player.GetID() == 2) {
                 List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board2);
                 if (endSpaces != null && endSpaces.Contains(p.position))
                 {
@@ -223,7 +223,7 @@ namespace ChessGame
                     HighlightSpots(p);
                 }
             }
-            if (previousPiece != null && previousPiece.player.GetID() == 0)
+            else if (previousPiece.player.GetID() == 0)
             {
                 HighlightSpots(p);
             }
