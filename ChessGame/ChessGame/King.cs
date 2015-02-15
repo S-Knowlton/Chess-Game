@@ -40,7 +40,7 @@ namespace ChessGame
 
             for (int i = 0; i < possibles.Count(); i++)
             {
-                if (b.pointExists(possibles[i]))
+                if (b.pointExists(possibles[i]) && b.GetPieceAt(possibles[i]).player.GetID() != player.GetID())
                 {
                     endSpaces.Add(possibles[i]);
                 }
