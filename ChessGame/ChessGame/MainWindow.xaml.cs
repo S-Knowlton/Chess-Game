@@ -197,6 +197,7 @@ namespace ChessGame
                     m.Start = previousPiece.position;
                     m.End = p.position;
                     board1.MakeMove(m);
+                    previousPiece = null;
                     UpdateBoard(board1);
                 }
                 else
@@ -204,14 +205,17 @@ namespace ChessGame
                     HighlightSpots(p);
                 }
             }
-            if (previousPiece.player.GetID() == 2) {
-                List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board1);
+            if (previousPiece != null && previousPiece.player.GetID() == 2) {
+                List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board2);
                 if (endSpaces != null && endSpaces.Contains(p.position))
                 {
                     Move m = new Move();
                     m.Start = previousPiece.position;
                     m.End = p.position;
+                    previousPiece = null;
                     board2.MakeMove(m);
+
+                    // THIS NEEDS TO BE A DIFFERENT BOARD
                     UpdateBoard(board2);
                 }
                 else
@@ -219,7 +223,7 @@ namespace ChessGame
                     HighlightSpots(p);
                 }
             }
-            if (previousPiece.player.GetID() == 0)
+            if (previousPiece != null && previousPiece.player.GetID() == 0)
             {
                 HighlightSpots(p);
             }
