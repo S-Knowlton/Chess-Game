@@ -225,15 +225,15 @@ namespace ChessGame
             else if (previousPiece.player.GetID() == 2) {
                 List<System.Drawing.Point> endSpaces = previousPiece.getPossibleEndSpaces(board2);
                 System.Drawing.Point piecePosition = p.position;
-                if (p.player.GetID() == 1)
+                if (p.player.GetID() != 2)
                 {
                     piecePosition = new System.Drawing.Point(7 - p.position.X, 7 - p.position.Y);
                 }
-                if (endSpaces != null && endSpaces.Contains(p.position))
+                if (endSpaces != null && endSpaces.Contains(piecePosition))
                 {
                     Move m = new Move();
                     m.Start = previousPiece.position;
-                    m.End = new System.Drawing.Point(7 - p.position.X, 7 - p.position.Y);
+                    m.End = piecePosition;
                     previousPiece = null;
                     board2.MakeMove(m);
 
