@@ -57,7 +57,7 @@ namespace ChessGame
 
         public bool pointExists(Point p)
         {
-            if (p.X > 7 || p.Y > 7)
+            if (p.X > 7 || p.Y > 7 || p.X < 0 || p.Y < 0)
             {
                 return false;
             }
