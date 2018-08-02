@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace ChessGame
 {
     class KyleAI
     {
 
-        MainWindow owner;
+        Page owner;
 
-        public KyleAI(MainWindow o)
+        public KyleAI(Page o)
         {
             owner = o;
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,75 +7,29 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class Bishop : Piece
+    public class Rook : Piece
     {
-        public Bishop(Player p):base(p)
-        {
+        private Player p1;
 
+        public Rook(Player p):base(p)
+        {
+          
         }
 
         /*
-         * To generate possible moves, use 'currentPosition' to keep track of a line. When
-         * it encounters a piece, stop moving in that direction, and mark if the spot is a viable move
-         */
+         * Returns a list of points that the rook could move to
+         */ 
         public override List<Point> getPossibleEndSpaces(Board b)
         {
             List<Point> endSpaces = new List<Point>();
 
-            //downLeft
             bool hitSomething = false;
             Point currentPosition = new Point(position.X, position.Y);
-            while (b.pointExists(new Point(currentPosition.X + 1, currentPosition.Y - 1)) && hitSomething == false)
-            {
-                currentPosition.X += 1;
-                currentPosition.Y -= 1;
 
-                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
-                {
-                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
-                }
-                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
-                {
-                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
-                    hitSomething = true;
-                }
-                else
-                {
-                    hitSomething = true;
-                }
-            }
-
-            //downRight
-            hitSomething = false;
-            currentPosition = new Point(position.X, position.Y);
-            while (b.pointExists(new Point(currentPosition.X + 1, currentPosition.Y + 1)) && hitSomething == false)
-            {
-                currentPosition.X += 1;
-                currentPosition.Y += 1;
-
-                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
-                {
-                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
-                }
-                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
-                {
-                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
-                    hitSomething = true;
-                }
-                else
-                {
-                    hitSomething = true;
-                }
-            }
-
-            //upLeft
-            hitSomething = false;
-            currentPosition = new Point(position.X, position.Y);
-            while (b.pointExists(new Point(currentPosition.X - 1, currentPosition.Y - 1)) && hitSomething == false)
+            //up
+            while (b.pointExists(new Point(currentPosition.X - 1, currentPosition.Y)) && hitSomething == false)
             {
                 currentPosition.X -= 1;
-                currentPosition.Y -= 1;
-
                 if (b.GetPieceAt(currentPosition).player.GetID() == 0)
                 {
                     endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
@@ -92,14 +45,54 @@ namespace ChessGame
                 }
             }
 
-            //upRight
             hitSomething = false;
             currentPosition = new Point(position.X, position.Y);
-            while (b.pointExists(new Point(currentPosition.X - 1, currentPosition.Y + 1)) && hitSomething == false)
+            //right
+            while (b.pointExists(new Point(currentPosition.X, currentPosition.Y + 1)) && hitSomething == false)
             {
-                currentPosition.X -= 1;
                 currentPosition.Y += 1;
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
 
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            //down
+            while (b.pointExists(new Point(currentPosition.X + 1, currentPosition.Y)) && hitSomething == false)
+            {
+                currentPosition.X += 1;
+                if (b.GetPieceAt(currentPosition).player.GetID() == 0)
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                }
+                else if (b.GetPieceAt(currentPosition).player.GetID() != player.GetID())
+                {
+                    endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
+                    hitSomething = true;
+                }
+                else
+                {
+                    hitSomething = true;
+                }
+            }
+
+            hitSomething = false;
+            currentPosition = new Point(position.X, position.Y);
+            //left
+            while (b.pointExists(new Point(currentPosition.X, currentPosition.Y - 1)) && hitSomething == false)
+            {
+                currentPosition.Y -= 1;
                 if (b.GetPieceAt(currentPosition).player.GetID() == 0)
                 {
                     endSpaces.Add(new Point(currentPosition.X, currentPosition.Y));
@@ -118,9 +111,8 @@ namespace ChessGame
             return endSpaces;
         }
 
-        public override string ToString()
-        {
-            return "B" + player.GetID();
+        public override string ToString(){
+            return "R" + player.GetID();
         }
     }
 }

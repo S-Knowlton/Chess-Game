@@ -69,13 +69,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Bishop.cs" />
-    <Compile Include="EmptyPiece.cs" />
-    <Compile Include="King.cs" />
-    <Compile Include="Knight.cs" />
+    <Compile Include="Models\Bishop.cs" />
+    <Compile Include="Models\Chess.cs" />
+    <Compile Include="Models\EmptyPiece.cs" />
+    <Compile Include="Models\King.cs" />
+    <Compile Include="Models\Knight.cs" />
     <Compile Include="KyleAI.cs" />
-    <Compile Include="Queen.cs" />
-    <Compile Include="Rook.cs" />
+    <Compile Include="Pages\Chess960Page.xaml.cs">
+      <DependentUpon>Chess960Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChessPage.xaml.cs">
+      <DependentUpon>ChessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StartupPage.xaml.cs">
+      <DependentUpon>StartupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Queen.cs" />
+    <Compile Include="Models\Rook.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,17 +94,29 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Board.cs" />
+    <Compile Include="Models\Board.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Chess960Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ChessPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StartupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Move.cs" />
-    <Compile Include="Pawn.cs" />
-    <Compile Include="Piece.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Models\Move.cs" />
+    <Compile Include="Models\Pawn.cs" />
+    <Compile Include="Models\Piece.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -138,6 +160,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

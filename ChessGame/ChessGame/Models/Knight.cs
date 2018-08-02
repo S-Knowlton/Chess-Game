@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class Knight : Piece
+    public class Knight : Piece
     {
         public Knight(Player p):base(p)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChessGame
 {
-    class Pawn : Piece
+    public class Pawn : Piece
     {
         public Pawn(Player p):base(p)
         {
