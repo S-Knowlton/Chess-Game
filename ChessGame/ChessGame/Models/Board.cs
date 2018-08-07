@@ -227,10 +227,6 @@ namespace ChessGame
             List<int> positions = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7 };
             List<Piece> pieces = new List<Piece> { new Queen(P1), new Knight(P1), new Knight(P1) };
             //player 1 (white)
-            for (int i = 0; i < 8; i++)
-            {
-                board[6, i] = new Pawn(P1);
-            }
             int num = positions[rand.Next(positions.Count)];
             positions.Remove(num);
             board[7, num] = new Rook(P1);
@@ -282,60 +278,94 @@ namespace ChessGame
             }
 
             //player 2 (black)
-            positions = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7 };
-            pieces = new List<Piece> { new Queen(P2), new Knight(P2), new Knight(P2) };
+
+            #region For mirrored pieces
             for (int i = 0; i < 8; i++)
             {
+                Type t = board[7, i].GetType();
+                if (t == typeof(King))
+                {
+                    board[0, i] = new King(P2);
+                }
+                else if (t == typeof(Queen))
+                {
+                    board[0, i] = new Queen(P2);
+                }
+                else if (t == typeof(Rook))
+                {
+                    board[0, i] = new Rook(P2);
+                }
+                else if (t == typeof(Bishop))
+                {
+                    board[0, i] = new Bishop(P2);
+                }
+                else if (t == typeof(Knight))
+                {
+                    board[0, i] = new Knight(P2);
+                }
+            }
+            #endregion
+            #region Non-mirrored pieces
+            //positions = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7 };
+            //pieces = new List<Piece> { new Queen(P2), new Knight(P2), new Knight(P2) };
+
+            //num = positions[rand.Next(positions.Count)];
+            //positions.Remove(num);
+            //board[0, num] = new Rook(P2);
+            //num2 = 0;
+            //loop = true;
+            //while (loop)
+            //{
+            //    num2 = positions[rand.Next(positions.Count)];
+            //    if (num2 - num > 1 || num - num2 > 1)
+            //    {
+            //        positions.Remove(num2);
+            //        board[0, num2] = new Rook(P2);
+            //        loop = false;
+            //    }
+            //}
+            //if (num > num2)
+            //{
+            //    int n = rand.Next(num2 + 1, num);
+            //    board[0, n] = new King(P2);
+            //    positions.Remove(n);
+            //}
+            //else
+            //{
+            //    int n = rand.Next(num + 1, num2);
+            //    board[0, n] = new King(P2);
+            //    positions.Remove(n);
+            //}
+            //num = positions[rand.Next(positions.Count)];
+            //positions.Remove(num);
+            //board[0, num] = new Bishop(P2);
+            //num2 = 0;
+            //loop = true;
+            //while (loop)
+            //{
+            //    num2 = positions[rand.Next(positions.Count)];
+            //    if (num % 2 != num2 % 2)
+            //    {
+            //        positions.Remove(num2);
+            //        board[0, num2] = new Bishop(P2);
+            //        loop = false;
+            //    }
+            //}
+            //while (positions.Count > 0)
+            //{
+            //    int temp = positions[rand.Next(positions.Count)];
+            //    positions.Remove(temp);
+            //    board[0, temp] = pieces.First();
+            //    pieces.RemoveAt(0);
+            //}
+            #endregion
+
+
+            //Add pawns
+            for (int i = 0; i < 8; i++)
+            {
+                board[6, i] = new Pawn(P1);
                 board[1, i] = new Pawn(P2);
-            }
-            num = positions[rand.Next(positions.Count)];
-            positions.Remove(num);
-            board[0, num] = new Rook(P2);
-            num2 = 0;
-            loop = true;
-            while (loop)
-            {
-                num2 = positions[rand.Next(positions.Count)];
-                if (num2 - num > 1 || num - num2 > 1)
-                {
-                    positions.Remove(num2);
-                    board[0, num2] = new Rook(P2);
-                    loop = false;
-                }
-            }
-            if (num > num2)
-            {
-                int n = rand.Next(num2 + 1, num);
-                board[0, n] = new King(P2);
-                positions.Remove(n);
-            }
-            else
-            {
-                int n = rand.Next(num + 1, num2);
-                board[0, n] = new King(P2);
-                positions.Remove(n);
-            }
-            num = positions[rand.Next(positions.Count)];
-            positions.Remove(num);
-            board[0, num] = new Bishop(P2);
-            num2 = 0;
-            loop = true;
-            while (loop)
-            {
-                num2 = positions[rand.Next(positions.Count)];
-                if (num % 2 != num2 % 2)
-                {
-                    positions.Remove(num2);
-                    board[0, num2] = new Bishop(P2);
-                    loop = false;
-                }
-            }
-            while (positions.Count > 0)
-            {
-                int temp = positions[rand.Next(positions.Count)];
-                positions.Remove(temp);
-                board[0, temp] = pieces.First();
-                pieces.RemoveAt(0);
             }
             for (int i = 0; i < 8; i++)
             {
