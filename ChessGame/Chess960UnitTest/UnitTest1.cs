@@ -13,9 +13,7 @@ namespace ChessGameUnitTest
         public void Chess_Board_White_Setup_Test()
         {
             List<Type> pieces = new List<Type> { typeof(Rook), typeof(Knight), typeof(Bishop), typeof(Queen), typeof(King), typeof(Bishop), typeof(Knight), typeof(Rook) };
-            Player p1 = new Player(1);
-            Player p2 = new Player(2);
-            Board b = new Board(p1, p2, false);
+            Board b = GetChessBoard();
             for (int i = 0; i < 8; i++)
             {
                 Piece p = b.GetPieceAt(new Point(7, i));
@@ -27,9 +25,7 @@ namespace ChessGameUnitTest
         public void Chess_Board_Black_Setup_Test()
         {
             List<Type> pieces = new List<Type> { typeof(Rook), typeof(Knight), typeof(Bishop), typeof(King), typeof(Queen), typeof(Bishop), typeof(Knight), typeof(Rook) };
-            Player p1 = new Player(1);
-            Player p2 = new Player(2);
-            Board b = new Board(p1, p2, false);
+            Board b = GetChessBoard();
             for (int i = 0; i < 8; i++)
             {
                 Piece p = b.GetPieceAt(new Point(0, i));
@@ -40,9 +36,7 @@ namespace ChessGameUnitTest
         [TestMethod]
         public void Chess960_Board_White_King_Setup_Test()
         {
-            Player p1 = new Player(1);
-            Player p2 = new Player(2);
-            Board b = new Board(p1, p2, true);
+            Board b = GetChess960Board();
             int[] spots = GetWhitePositions(typeof(Rook), b.board);
             Assert.AreNotEqual(spots[1] - spots[0], 1);
             bool pass = false;
@@ -60,9 +54,7 @@ namespace ChessGameUnitTest
         [TestMethod]
         public void Chess960_Board_Black_King_Setup_Test()
         {
-            Player p1 = new Player(1);
-            Player p2 = new Player(2);
-            Board b = new Board(p1, p2, true);
+            Board b = GetChess960Board();
             int[] spots = GetBlackPositions(typeof(Rook), b.board);
             Assert.AreNotEqual(spots[1] - spots[0], 1);
             bool pass = false;
@@ -80,9 +72,7 @@ namespace ChessGameUnitTest
         [TestMethod]
         public void Chess960_Board_White_Bishop_Setup_Test()
         {
-            Player p1 = new Player(1);
-            Player p2 = new Player(2);
-            Board b = new Board(p1, p2, true);
+            Board b = GetChess960Board();
             int[] spots = GetWhitePositions(typeof(Bishop), b.board);
             Assert.AreNotEqual(spots[0] % 2, spots[1] % 2);
         }
@@ -90,13 +80,12 @@ namespace ChessGameUnitTest
         [TestMethod]
         public void Chess960_Board_Black_Bishop_Setup_Test()
         {
-            Player p1 = new Player(1);
-            Player p2 = new Player(2);
-            Board b = new Board(p1, p2, true);
+            Board b = GetChess960Board();
             int[] spots = GetBlackPositions(typeof(Bishop), b.board);
             Assert.AreNotEqual(spots[0] % 2, spots[1] % 2);
         }
 
+        //Helper methods
         private int[] GetWhitePositions(Type t, Piece[,] board)
         {
             int[] result = new int[2];
@@ -122,6 +111,20 @@ namespace ChessGameUnitTest
                 }
             }
             return result;
+        }
+        private Board GetChessBoard()
+        {
+            Player p1 = new Player(1);
+            Player p2 = new Player(2);
+            Board b = new Board(p1, p2, false);
+            return b;
+        }
+        private Board GetChess960Board()
+        {
+            Player p1 = new Player(1);
+            Player p2 = new Player(2);
+            Board b = new Board(p1, p2, true);
+            return b;
         }
     }
 }

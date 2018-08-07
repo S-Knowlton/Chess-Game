@@ -224,14 +224,13 @@ namespace ChessGame
         private void SetupChess960()
         {
             Random rand = new Random();
-            List<int> positions = new List<int>{ 0, 1, 2, 3, 4, 5, 6, 7 };
+            List<int> positions = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7 };
             List<Piece> pieces = new List<Piece> { new Queen(P1), new Knight(P1), new Knight(P1) };
             //player 1 (white)
             for (int i = 0; i < 8; i++)
             {
                 board[6, i] = new Pawn(P1);
             }
-
             int num = positions[rand.Next(positions.Count)];
             positions.Remove(num);
             board[7, num] = new Rook(P1);
@@ -247,7 +246,7 @@ namespace ChessGame
                     loop = false;
                 }
             }
-            if(num > num2)
+            if (num > num2)
             {
                 int n = rand.Next(num2 + 1, num);
                 board[7, n] = new King(P1);
@@ -274,9 +273,6 @@ namespace ChessGame
                     loop = false;
                 }
             }
-
-
-
             while (positions.Count > 0)
             {
                 int temp = positions[rand.Next(positions.Count)];
@@ -284,25 +280,6 @@ namespace ChessGame
                 board[7, temp] = pieces.First();
                 pieces.RemoveAt(0);
             }
-
-
-
-
-
-
-
-            ////int temp = rand.Next(num + 1, num2);
-            ////board[7, temp] = new King(P1);
-            //loop = true;
-            //while (loop)
-            //{
-            //    num2 = rand.Next(4, 8);
-            //    if (board[7, num2] == null && (num % 2 != num2 % 2) && (num2 - num > 1|| num - num2 > 1))
-            //    {
-            //        board[7, num2] = new Bishop(P1);
-            //        loop = false;
-            //    }
-            //}
 
             //player 2 (black)
             positions = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7 };
@@ -353,7 +330,6 @@ namespace ChessGame
                     loop = false;
                 }
             }
-
             while (positions.Count > 0)
             {
                 int temp = positions[rand.Next(positions.Count)];
@@ -361,7 +337,6 @@ namespace ChessGame
                 board[0, temp] = pieces.First();
                 pieces.RemoveAt(0);
             }
-
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
